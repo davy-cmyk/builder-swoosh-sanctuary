@@ -61,9 +61,17 @@ export function Navbar({ className }: NavbarProps) {
           position: sticky;
           top: 0;
           z-index: 100;
-          background: hsl(var(--automotive-black));
+          background: linear-gradient(to bottom right, hsl(var(--automotive-black)), hsl(var(--automotive-black-light)), hsl(var(--automotive-black)));
           border-bottom: 1px solid hsl(var(--automotive-gold) / 0.2);
           backdrop-filter: blur(8px);
+          position: relative;
+        }
+        .cl-nav::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 30% 40%, rgba(255,215,0,0.05), transparent 50%);
+          pointer-events: none;
         }
         .cl-nav-inner { 
           max-width: 1200px; 
