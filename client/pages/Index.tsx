@@ -518,14 +518,6 @@ export default function Index() {
       {/* Car Quiz Section */}
       <section className="py-16 md:py-24 bg-automotive-black-light">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Find Your Best Next Move
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Answer a few quick questions and we'll guide you to the perfect automotive path.
-            </p>
-          </div>
 
           <div id="cl-quiz">
             <form id="quizForm">
