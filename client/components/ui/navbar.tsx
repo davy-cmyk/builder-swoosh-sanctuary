@@ -122,12 +122,20 @@ export function Navbar({ className }: NavbarProps) {
             Car Leopard
           </a>
 
-          <nav className={cn("cl-links", isMenuOpen && "show")} aria-label="Primary">
+          <nav className="cl-links" aria-label="Primary">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  // Close mobile menu when clicking a link
+                  const links = document.querySelector('.cl-links');
+                  const burger = document.querySelector('.cl-burger');
+                  if (links && burger) {
+                    links.classList.remove('show');
+                    burger.setAttribute('aria-expanded', 'false');
+                  }
+                }}
               >
                 {item.label}
               </a>
@@ -140,11 +148,10 @@ export function Navbar({ className }: NavbarProps) {
             </a>
           </div>
 
-          <button 
-            className="cl-burger" 
-            aria-label="Menu" 
-            aria-expanded={isMenuOpen}
-            onClick={toggleMenu}
+          <button
+            className="cl-burger"
+            aria-label="Menu"
+            aria-expanded="false"
           >
             <span></span>
             <span></span>
