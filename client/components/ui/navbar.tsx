@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
@@ -6,11 +6,24 @@ interface NavbarProps {
 }
 
 export function Navbar({ className }: NavbarProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    // Mobile menu toggle script
+    const burger = document.querySelector('.cl-burger');
+    const links = document.querySelector('.cl-links');
+    if (burger && links) {
+      const handleClick = () => {
+        const open = links.classList.toggle('show');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+      burger.addEventListener('click', handleClick);
+
+      // Cleanup
+      return () => {
+        burger.removeEventListener('click', handleClick);
+      };
+    }
+  }, []);
 
   const navItems = [
     { label: "Smart Buyer™", href: "/smart-buyer-report" },
