@@ -23,6 +23,12 @@ import RecallCheckResults from "./pages/RecallCheckResults";
 import TradeMaxResults from "./pages/TradeMaxResults";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
+import CarsHoldValue from "./pages/CarsHoldValue";
+import CarsToAvoid from "./pages/CarsToAvoid";
+import RepairRisk from "./pages/RepairRisk";
+import EvVsGas from "./pages/EvVsGas";
+import LocalDeals from "./pages/LocalDeals";
+import PopularPicks from "./pages/PopularPicks";
 
 const queryClient = new QueryClient();
 
