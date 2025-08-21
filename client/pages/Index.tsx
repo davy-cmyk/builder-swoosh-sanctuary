@@ -19,7 +19,7 @@ export default function Index() {
     <div className="min-h-screen bg-automotive-black text-white">
       <Navbar />
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section id="home" className="relative overflow-hidden pt-16 lg:pt-20">
         {/* Background with subtle pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-automotive-black via-automotive-black-light to-automotive-black opacity-90"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,215,0,0.1),transparent_50%)]"></div>
