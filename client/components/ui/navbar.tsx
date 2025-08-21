@@ -209,6 +209,33 @@ export function Navbar({ className }: NavbarProps) {
             justify-content: space-between;
           }
         }
+
+        /* Leopard Pattern Accents */
+        .cl-nav::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, hsl(var(--automotive-gold)), transparent);
+          opacity: 0.6;
+        }
+        .cl-nav::before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 20px;
+          width: 3px;
+          height: 3px;
+          background: hsl(var(--automotive-gold) / 0.4);
+          border-radius: 50%;
+          animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 0.8; }
+        }
       `}</style>
 
       <header className={cn("cl-nav", className)}>
