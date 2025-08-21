@@ -531,7 +531,123 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Car Categories Section */}
+      <section className="py-16 md:py-24 bg-automotive-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                Explore Car <span className="text-automotive-gold">Intelligence</span>
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Get expert insights on the best cars to buy, which ones to avoid, and make smarter decisions.
+              </p>
+            </div>
 
+            {/* Categories Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Cars That Hold Value */}
+              <a href="/cars-that-hold-value" className="group block">
+                <div className="relative bg-gradient-to-br from-automotive-black-light to-automotive-black-dark border border-automotive-gold/20 rounded-2xl p-6 h-full hover:border-automotive-gold/40 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzI0MjQyNCIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-50"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-automotive-gold/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-automotive-gold/30 transition-colors">
+                      <svg className="w-8 h-8 text-automotive-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-automotive-gold transition-colors">Cars That Hold Value</h3>
+                    <p className="text-gray-400 leading-relaxed">Discover vehicles with the best resale value and long-term investment potential.</p>
+                  </div>
+                </div>
+              </a>
+
+              {/* Cars to Avoid */}
+              <a href="/cars-to-avoid" className="group block">
+                <div className="relative bg-gradient-to-br from-automotive-black-light to-automotive-black-dark border border-automotive-gold/20 rounded-2xl p-6 h-full hover:border-automotive-gold/40 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzI0MjQyNCIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-50"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-red-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-500/30 transition-colors">
+                      <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.958-.833-2.728 0L4.186 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors">Cars to Avoid</h3>
+                    <p className="text-gray-400 leading-relaxed">Learn about vehicles with known issues, poor reliability, and high ownership costs.</p>
+                  </div>
+                </div>
+              </a>
+
+              {/* Repair Risk */}
+              <a href="/repair-risk" className="group block">
+                <div className="relative bg-gradient-to-br from-automotive-black-light to-automotive-black-dark border border-automotive-gold/20 rounded-2xl p-6 h-full hover:border-automotive-gold/40 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzI0MjQyNCIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-50"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-orange-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-500/30 transition-colors">
+                      <svg className="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">Repair Risk</h3>
+                    <p className="text-gray-400 leading-relaxed">Understand maintenance costs and common repair issues before you buy.</p>
+                  </div>
+                </div>
+              </a>
+
+              {/* EV vs Gas */}
+              <a href="/ev-vs-gas" className="group block">
+                <div className="relative bg-gradient-to-br from-automotive-black-light to-automotive-black-dark border border-automotive-gold/20 rounded-2xl p-6 h-full hover:border-automotive-gold/40 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzI0MjQyNCIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-50"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-colors">
+                      <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">EV vs Gas</h3>
+                    <p className="text-gray-400 leading-relaxed">Compare electric and gas vehicles on cost, performance, and environmental impact.</p>
+                  </div>
+                </div>
+              </a>
+
+              {/* Local Deals */}
+              <a href="/local-deals" className="group block">
+                <div className="relative bg-gradient-to-br from-automotive-black-light to-automotive-black-dark border border-automotive-gold/20 rounded-2xl p-6 h-full hover:border-automotive-gold/40 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzI0MjQyNCIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-50"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-500/30 transition-colors">
+                      <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">Local Deals</h3>
+                    <p className="text-gray-400 leading-relaxed">Find the best car deals and discounts in your area right now.</p>
+                  </div>
+                </div>
+              </a>
+
+              {/* Popular Picks */}
+              <a href="/popular-picks" className="group block">
+                <div className="relative bg-gradient-to-br from-automotive-black-light to-automotive-black-dark border border-automotive-gold/20 rounded-2xl p-6 h-full hover:border-automotive-gold/40 transition-all duration-300 hover:scale-105 overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iIzI0MjQyNCIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-50"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-automotive-gold/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-automotive-gold/30 transition-colors">
+                      <svg className="w-8 h-8 text-automotive-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-automotive-gold transition-colors">Popular Picks</h3>
+                    <p className="text-gray-400 leading-relaxed">See what cars are trending and why buyers are choosing them.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer CTA */}
       <section id="about" className="py-16 md:py-24 bg-gradient-to-br from-automotive-black-dark to-automotive-black">
