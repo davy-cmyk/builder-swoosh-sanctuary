@@ -87,6 +87,9 @@ export function Navbar({ className }: NavbarProps) {
         .cl-dropdown {
           position: relative;
         }
+        .cl-dropdown:hover {
+          z-index: 1001;
+        }
         .cl-dropdown > button {
           color: hsl(var(--foreground) / 0.8);
           text-decoration: none;
