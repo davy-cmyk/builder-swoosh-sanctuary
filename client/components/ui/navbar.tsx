@@ -73,13 +73,14 @@ export function Navbar({ className }: NavbarProps) {
           background: radial-gradient(circle at 30% 40%, rgba(255,215,0,0.05), transparent 50%);
           pointer-events: none;
         }
-        .cl-nav-inner { 
-          max-width: 1200px; 
-          margin: 0 auto; 
-          padding: 14px 20px; 
-          display: flex; 
-          align-items: center; 
-          gap: 16px; 
+        .cl-nav-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 14px 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
         }
         .cl-logo { 
           font-weight: 700; 
