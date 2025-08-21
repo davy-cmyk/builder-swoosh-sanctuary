@@ -88,8 +88,8 @@ export function Navbar({ className }: NavbarProps) {
           position: relative;
         }
         .cl-dropdown > button {
-          color: #333; 
-          text-decoration: none; 
+          color: hsl(var(--foreground) / 0.8);
+          text-decoration: none;
           font-weight: 500;
           background: none;
           border: none;
@@ -100,7 +100,7 @@ export function Navbar({ className }: NavbarProps) {
           gap: 4px;
         }
         .cl-dropdown > button:hover {
-          color: var(--gold);
+          color: hsl(var(--automotive-gold));
         }
         .cl-dropdown-menu {
           position: absolute;
