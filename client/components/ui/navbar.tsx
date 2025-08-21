@@ -99,7 +99,7 @@ export function Navbar({ className }: NavbarProps) {
           z-index: 1001;
         }
         .cl-dropdown > button {
-          color: #ffffff;
+          color: hsl(var(--automotive-gold));
           text-decoration: none;
           font-weight: 500;
           background: none;
@@ -113,7 +113,7 @@ export function Navbar({ className }: NavbarProps) {
           transition: all 0.2s ease;
         }
         .cl-dropdown > button:hover {
-          color: hsl(var(--automotive-gold));
+          color: hsl(var(--automotive-gold-light));
           background: hsl(var(--automotive-gold) / 0.1);
         }
         .cl-dropdown-menu {
