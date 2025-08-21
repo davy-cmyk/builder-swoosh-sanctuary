@@ -66,27 +66,27 @@ export function Navbar({ className }: NavbarProps) {
 
   const dropdownItems = [
     {
-      label: "Shop Smart",
+      label: language === 'en' ? "Shop Smart" : "Compra Inteligente",
       items: [
-        { label: "Smart Buyer™ Report", href: "/smart-buyer-report" },
-        { label: "Recall Check", href: "/recall-check" },
-        { label: "Cars That Hold Value", href: "/value-hold" }
+        { label: language === 'en' ? "Smart Buyer™ Report" : "Reporte Smart Buyer™", href: "/smart-buyer-report" },
+        { label: language === 'en' ? "Recall Check" : "Verificación de Recalls", href: "/recall-check" },
+        { label: language === 'en' ? "Cars That Hold Value" : "Autos que Mantienen Valor", href: "/value-hold" }
       ]
     },
     {
-      label: "Buy Smarter", 
+      label: language === 'en' ? "Buy Smarter" : "Compra Mejor",
       items: [
-        { label: "Cars to Avoid", href: "/cars-to-avoid" },
+        { label: language === 'en' ? "Cars to Avoid" : "Autos a Evitar", href: "/cars-to-avoid" },
         { label: "TradeMax™", href: "/trademax" },
-        { label: "Top by Fuel Type", href: "/fuel-picks" }
+        { label: language === 'en' ? "Top by Fuel Type" : "Mejores por Combustible", href: "/fuel-picks" }
       ]
     },
     {
-      label: "Tools",
+      label: language === 'en' ? "Tools" : "Herramientas",
       items: [
-        { label: "VIN Check", href: "/vin-check" },
-        { label: "Market Analysis", href: "/market-analysis" },
-        { label: "Vehicle History", href: "/vehicle-history" }
+        { label: language === 'en' ? "VIN Check" : "Verificación VIN", href: "/vin-check" },
+        { label: language === 'en' ? "Market Analysis" : "Análisis de Mercado", href: "/market-analysis" },
+        { label: language === 'en' ? "Vehicle History" : "Historial del Vehículo", href: "/vehicle-history" }
       ]
     }
   ];
