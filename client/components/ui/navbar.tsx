@@ -57,12 +57,13 @@ export function Navbar({ className }: NavbarProps) {
   return (
     <>
       <style jsx>{`
-        .cl-nav { 
-          position: sticky; 
-          top: 0; 
-          z-index: 50; 
-          background: #fff; 
-          border-bottom: 1px solid #eee; 
+        .cl-nav {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          background: hsl(var(--automotive-black));
+          border-bottom: 1px solid hsl(var(--automotive-gold) / 0.2);
+          backdrop-filter: blur(8px);
         }
         .cl-nav-inner { 
           max-width: 1200px; 
