@@ -44,52 +44,18 @@ export function Navbar({ className }: NavbarProps) {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-8" aria-label="Primary">
             {navItems.map((item) => (
-              <div key={item.label} className="relative group">
-                {item.dropdown ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setActiveDropdown(item.label)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    <button className="flex items-center gap-1 text-gray-300 hover:text-automotive-gold transition-colors duration-200 py-2 group">
-                      {item.label}
-                      <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-                    </button>
-                    
-                    {/* Dropdown Menu */}
-                    <div className={cn(
-                      "absolute top-full left-0 mt-2 w-56 bg-automotive-black-light/95 backdrop-blur-md border border-automotive-gold/20 rounded-xl shadow-2xl transition-all duration-200",
-                      activeDropdown === item.label 
-                        ? "opacity-100 translate-y-0 pointer-events-auto" 
-                        : "opacity-0 translate-y-2 pointer-events-none"
-                    )}>
-                      <div className="p-2">
-                        {item.dropdown.map((dropdownItem) => (
-                          <a
-                            key={dropdownItem.label}
-                            href={dropdownItem.href}
-                            className="block px-4 py-3 text-gray-300 hover:text-automotive-gold hover:bg-automotive-gold/10 rounded-lg transition-all duration-200"
-                          >
-                            {dropdownItem.label}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <a
-                    href={item.href}
-                    className="relative text-gray-300 hover:text-automotive-gold transition-colors duration-200 py-2"
-                  >
-                    {item.label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-automotive-gold transition-all duration-300 group-hover:w-full"></span>
-                  </a>
-                )}
-              </div>
+              <a
+                key={item.label}
+                href={item.href}
+                className="relative text-gray-300 hover:text-automotive-gold transition-colors duration-200 py-2 group"
+              >
+                {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-automotive-gold transition-all duration-300 group-hover:w-full"></span>
+              </a>
             ))}
-          </div>
+          </nav>
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
