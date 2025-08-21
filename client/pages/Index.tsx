@@ -447,6 +447,167 @@ export default function Index() {
       </section>
 
 
+      {/* Car Quiz Section */}
+      <section id="cl-quiz" className="py-16 md:py-24 bg-automotive-black-light">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+                Find Your Best Next Move
+              </h2>
+              <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Answer a few quick questions and we'll guide you to the perfect automotive path.
+              </p>
+            </div>
+
+            <div className="bg-automotive-black border border-automotive-gold/20 rounded-3xl p-8 md:p-12">
+              <form id="quizForm" className="space-y-8">
+                <div className="q">
+                  <label className="block text-white font-semibold mb-3 text-lg">
+                    Budget range?
+                  </label>
+                  <select
+                    name="budget"
+                    required
+                    className="w-full p-4 bg-automotive-black-light border border-automotive-gold/30 rounded-xl text-white focus:border-automotive-gold focus:ring-1 focus:ring-automotive-gold focus:outline-none"
+                  >
+                    <option value="">Select</option>
+                    <option value="under15">Under $15k</option>
+                    <option value="15to25">$15k–$25k</option>
+                    <option value="25to40">$25k–$40k</option>
+                    <option value="40plus">$40k+</option>
+                  </select>
+                </div>
+
+                <div className="q">
+                  <label className="block text-white font-semibold mb-3 text-lg">
+                    Primary goal?
+                  </label>
+                  <select
+                    name="goal"
+                    required
+                    className="w-full p-4 bg-automotive-black-light border border-automotive-gold/30 rounded-xl text-white focus:border-automotive-gold focus:ring-1 focus:ring-automotive-gold focus:outline-none"
+                  >
+                    <option value="">Select</option>
+                    <option value="avoidlemons">Avoid risk</option>
+                    <option value="bestdeal">Max savings</option>
+                    <option value="valuehold">Hold value</option>
+                    <option value="evcurious">Explore EV/Hybrid</option>
+                  </select>
+                </div>
+
+                <div className="q">
+                  <label className="block text-white font-semibold mb-3 text-lg">
+                    Ownership horizon?
+                  </label>
+                  <select
+                    name="horizon"
+                    required
+                    className="w-full p-4 bg-automotive-black-light border border-automotive-gold/30 rounded-xl text-white focus:border-automotive-gold focus:ring-1 focus:ring-automotive-gold focus:outline-none"
+                  >
+                    <option value="">Select</option>
+                    <option value="1-2">1–2 years</option>
+                    <option value="3-5">3–5 years</option>
+                    <option value="6plus">6+ years</option>
+                  </select>
+                </div>
+
+                <div className="q">
+                  <label className="block text-white font-semibold mb-3 text-lg">
+                    Mileage tolerance?
+                  </label>
+                  <select
+                    name="miles"
+                    required
+                    className="w-full p-4 bg-automotive-black-light border border-automotive-gold/30 rounded-xl text-white focus:border-automotive-gold focus:ring-1 focus:ring-automotive-gold focus:outline-none"
+                  >
+                    <option value="">Select</option>
+                    <option value="low">Under 40k</option>
+                    <option value="mid">40k–80k</option>
+                    <option value="high">80k–120k</option>
+                    <option value="any">Any</option>
+                  </select>
+                </div>
+
+                <div className="q">
+                  <label className="block text-white font-semibold mb-3 text-lg">
+                    Fuel preference?
+                  </label>
+                  <select
+                    name="fuel"
+                    required
+                    className="w-full p-4 bg-automotive-black-light border border-automotive-gold/30 rounded-xl text-white focus:border-automotive-gold focus:ring-1 focus:ring-automotive-gold focus:outline-none"
+                  >
+                    <option value="">Select</option>
+                    <option value="gas">Gas</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="ev">EV</option>
+                    <option value="diesel">Diesel</option>
+                  </select>
+                </div>
+
+                <div className="q">
+                  <label className="block text-white font-semibold mb-4 text-lg">
+                    Must-have features?
+                  </label>
+                  <div className="opts grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <label className="flex items-center gap-3 p-4 bg-automotive-black-light border border-automotive-gold/20 rounded-xl hover:border-automotive-gold/40 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="feat"
+                        value="awd"
+                        className="w-5 h-5 text-automotive-gold bg-automotive-black border-automotive-gold/30 rounded focus:ring-automotive-gold focus:ring-2"
+                      />
+                      <span className="text-white font-medium">AWD</span>
+                    </label>
+                    <label className="flex items-center gap-3 p-4 bg-automotive-black-light border border-automotive-gold/20 rounded-xl hover:border-automotive-gold/40 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="feat"
+                        value="safety"
+                        className="w-5 h-5 text-automotive-gold bg-automotive-black border-automotive-gold/30 rounded focus:ring-automotive-gold focus:ring-2"
+                      />
+                      <span className="text-white font-medium">Advanced safety</span>
+                    </label>
+                    <label className="flex items-center gap-3 p-4 bg-automotive-black-light border border-automotive-gold/20 rounded-xl hover:border-automotive-gold/40 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="feat"
+                        value="tech"
+                        className="w-5 h-5 text-automotive-gold bg-automotive-black border-automotive-gold/30 rounded focus:ring-automotive-gold focus:ring-2"
+                      />
+                      <span className="text-white font-medium">Modern tech</span>
+                    </label>
+                    <label className="flex items-center gap-3 p-4 bg-automotive-black-light border border-automotive-gold/20 rounded-xl hover:border-automotive-gold/40 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="feat"
+                        value="cargo"
+                        className="w-5 h-5 text-automotive-gold bg-automotive-black border-automotive-gold/30 rounded focus:ring-automotive-gold focus:ring-2"
+                      />
+                      <span className="text-white font-medium">Cargo space</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div className="text-center pt-6">
+                  <button
+                    type="submit"
+                    className="bg-gradient-to-r from-automotive-gold to-automotive-gold-dark hover:from-automotive-gold-dark hover:to-automotive-gold text-automotive-black font-bold px-12 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-automotive-gold/25"
+                  >
+                    See my path
+                  </button>
+                </div>
+              </form>
+
+              <div id="quizResult" className="hidden mt-8 p-6 bg-automotive-gold/10 border border-automotive-gold/20 rounded-xl">
+                {/* Quiz results will be populated here */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer CTA */}
       <section id="about" className="py-16 md:py-24 bg-gradient-to-br from-automotive-black-dark to-automotive-black">
         <div className="container mx-auto px-4">
