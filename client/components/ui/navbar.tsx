@@ -31,22 +31,17 @@ export function Navbar({ className }: NavbarProps) {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <div className="relative">
               <div className="absolute inset-0 bg-automotive-gold/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-automotive-gold to-automotive-gold-dark rounded-full flex items-center justify-center shadow-lg">
                 <Car className="w-5 h-5 lg:w-6 lg:h-6 text-automotive-black" />
               </div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-lg lg:text-xl font-bold text-automotive-gold tracking-tight">
-                CAR LEOPARD
-              </span>
-              <span className="text-xs text-gray-400 -mt-1 hidden sm:block">
-                Vehicle Intelligence
-              </span>
-            </div>
-          </div>
+            <span className="text-lg lg:text-xl font-bold text-automotive-gold tracking-tight">
+              Car Leopard
+            </span>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
