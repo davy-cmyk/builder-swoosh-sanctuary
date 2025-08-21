@@ -43,12 +43,20 @@ const App = () => (
           <Route path="/deals" element={<Deals />} />
           <Route path="/fuel-picks" element={<FuelPicks />} />
           <Route path="/smart-buyer-report" element={<SmartBuyerReport />} />
+          <Route path="/smart-buyer-report/sample" element={<SmartBuyerSample />} />
           <Route path="/smart-buyer-report/checkout" element={<SmartBuyerCheckout />} />
           <Route path="/smart-buyer-report/success" element={<SmartBuyerSuccess />} />
           <Route path="/recall-check/results" element={<RecallCheckResults />} />
           <Route path="/trademax/results" element={<TradeMaxResults />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/404" element={<NotFound />} />
+
+          {/* Redirects */}
+          <Route path="/report" element={<Navigate to="/smart-buyer-report" replace />} />
+          <Route path="/recalls" element={<Navigate to="/recall-check" replace />} />
+          <Route path="/trade" element={<Navigate to="/trademax" replace />} />
+          <Route path="/values" element={<Navigate to="/value-hold" replace />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
