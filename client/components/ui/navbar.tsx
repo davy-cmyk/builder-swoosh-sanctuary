@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Car, Shield, Search, User, ChevronDown } from "lucide-react";
+import { Menu, X, Car } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
@@ -10,7 +10,6 @@ interface NavbarProps {
 
 export function Navbar({ className }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const navItems = [
     { label: "Smart Buyer™", href: "/smart-buyer-report" },
