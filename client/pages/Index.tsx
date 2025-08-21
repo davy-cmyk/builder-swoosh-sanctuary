@@ -197,60 +197,87 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Automotive Journey Cards */}
-      <section className="py-16 md:py-24 bg-automotive-black-light">
+      {/* Car Search Section */}
+      <section className="py-12 md:py-16 bg-automotive-black-light">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Ready to Trade */}
-            <Card className="bg-automotive-black border-automotive-gold/20 hover:border-automotive-gold/40 transition-all duration-300 group h-full">
-              <CardContent className="p-8 text-left h-full flex flex-col">
-                <div className="w-16 h-16 bg-automotive-gold/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-automotive-gold/30 transition-colors">
-                  <svg className="w-8 h-8 text-automotive-gold" fill="currentColor" viewBox="0 0 24 24">
+          <div className="max-w-4xl mx-auto">
+            {/* Search Heading */}
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                Search for Your Perfect Car
+              </h2>
+              <p className="text-gray-400">
+                Enter a VIN, license plate, or search by make and model
+              </p>
+            </div>
+
+            {/* Search Form */}
+            <div className="bg-automotive-black border border-automotive-gold/30 rounded-2xl p-6 mb-8">
+              <div className="flex flex-col md:flex-row gap-4">
+                <Input
+                  type="text"
+                  placeholder="Enter VIN, License Plate, or Make/Model"
+                  className="flex-1 h-12 bg-automotive-black-light border-automotive-gold/30 text-white placeholder:text-gray-400 focus:border-automotive-gold focus:ring-automotive-gold"
+                />
+                <Button className="h-12 px-8 bg-automotive-gold hover:bg-automotive-gold-dark text-automotive-black font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                  Search
+                </Button>
+              </div>
+            </div>
+
+            {/* Quick Action CTAs - Smaller Cards */}
+            <div className="grid md:grid-cols-3 gap-4">
+              {/* Trade Your Car */}
+              <Button
+                variant="outline"
+                className="h-auto p-4 bg-automotive-black/50 border-automotive-gold/20 hover:border-automotive-gold/40 hover:bg-automotive-black text-left flex flex-col items-start gap-2 transition-all duration-300 group"
+              >
+                <div className="w-10 h-10 bg-automotive-gold/20 rounded-lg flex items-center justify-center group-hover:bg-automotive-gold/30 transition-colors">
+                  <svg className="w-5 h-5 text-automotive-gold" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
-                  Ready to trade your car and want to know your options?
-                </h3>
-                <p className="text-gray-400 leading-relaxed mt-auto">
-                  Ready to trade your car and want to know your options?
-                </p>
-              </CardContent>
-            </Card>
+                <div>
+                  <h3 className="text-white font-semibold text-sm mb-1">Trade Your Car</h3>
+                  <p className="text-gray-400 text-xs">Get trade-in value & options</p>
+                </div>
+              </Button>
 
-            {/* Already Found Your Ride */}
-            <Card className="bg-automotive-black border-automotive-gold/20 hover:border-automotive-gold/40 transition-all duration-300 group h-full">
-              <CardContent className="p-8 text-left h-full flex flex-col">
-                <div className="w-16 h-16 bg-automotive-gold/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-automotive-gold/30 transition-colors">
-                  <svg className="w-8 h-8 text-automotive-gold" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 3.5C14.1 3.1 13 3.4 12.6 4.3L10.7 8.1C10.3 8.9 10.6 10 11.4 10.4L13 11.2V13H11L7.91 16.09C7.66 16.34 7.66 16.76 7.91 17.01L8.83 17.93C9.08 18.18 9.5 18.18 9.75 17.93L12.25 15.43C12.66 15.02 12.66 14.35 12.25 13.94L11 12.69V10.4L13 9.4V17C13 17.6 13.4 18 14 18H16C16.6 18 17 17.6 17 17V9H21Z"/>
+              {/* Check History */}
+              <Button
+                variant="outline"
+                className="h-auto p-4 bg-automotive-black/50 border-automotive-gold/20 hover:border-automotive-gold/40 hover:bg-automotive-black text-left flex flex-col items-start gap-2 transition-all duration-300 group"
+              >
+                <div className="w-10 h-10 bg-automotive-gold/20 rounded-lg flex items-center justify-center group-hover:bg-automotive-gold/30 transition-colors">
+                  <svg className="w-5 h-5 text-automotive-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2m0 0l2-2m-2 2V8m0 12a9 9 0 100-18 9 9 0 000 18z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
-                  Already found your ride but want that peace of mind?
-                </h3>
-                <p className="text-gray-400 leading-relaxed mt-auto">
-                  Get you peristort your top 3 and we give you a
-                </p>
-              </CardContent>
-            </Card>
+                <div>
+                  <h3 className="text-white font-semibold text-sm mb-1">Check History</h3>
+                  <p className="text-gray-400 text-xs">Get complete car story</p>
+                </div>
+              </Button>
 
-            {/* Just Starting */}
-            <Card className="bg-automotive-black border-automotive-gold/20 hover:border-automotive-gold/40 transition-all duration-300 group h-full">
-              <CardContent className="p-8 text-left h-full flex flex-col">
-                <div className="w-16 h-16 bg-automotive-gold/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-automotive-gold/30 transition-colors">
-                  <svg className="w-8 h-8 text-automotive-gold" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+              {/* Browse Deals */}
+              <Button
+                variant="outline"
+                className="h-auto p-4 bg-automotive-black/50 border-automotive-gold/20 hover:border-automotive-gold/40 hover:bg-automotive-black text-left flex flex-col items-start gap-2 transition-all duration-300 group"
+              >
+                <div className="w-10 h-10 bg-automotive-gold/20 rounded-lg flex items-center justify-center group-hover:bg-automotive-gold/30 transition-colors">
+                  <svg className="w-5 h-5 text-automotive-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
-                  Just starting the journey?
-                </h3>
-                <p className="text-gray-400 leading-relaxed mt-auto">
-                  Search your top 3 and we'll give you a side by side comparison
-                </p>
-              </CardContent>
-            </Card>
+                <div>
+                  <h3 className="text-white font-semibold text-sm mb-1">Browse Deals</h3>
+                  <p className="text-gray-400 text-xs">Find local car deals</p>
+                </div>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
