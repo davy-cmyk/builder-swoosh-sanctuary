@@ -1,14 +1,18 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+
+# Allow all search engines to crawl the site
+Disallow: /admin/
+Disallow: /api/
+Disallow: /checkout/
+Disallow: /success/
+Disallow: /results/
+Disallow: /thank-you
+Disallow: /404
+Disallow: /promo/
+
+# Sitemap location
+Sitemap: https://carleopard.ai/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
