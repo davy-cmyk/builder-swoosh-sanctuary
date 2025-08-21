@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Navbar } from "@/components/ui/navbar";
+import { Footer } from "@/components/ui/footer";
 import { Shield, DollarSign, TrendingUp, ArrowRight, CheckCircle, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 
 export default function Index() {
