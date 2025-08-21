@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Car } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
@@ -9,7 +6,11 @@ interface NavbarProps {
 }
 
 export function Navbar({ className }: NavbarProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const navItems = [
     { label: "Smart Buyer™", href: "/smart-buyer-report" },
@@ -21,120 +22,123 @@ export function Navbar({ className }: NavbarProps) {
   ];
 
   return (
-    <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 bg-automotive-black/95 backdrop-blur-md border-b border-automotive-gold/20",
-      "before:absolute before:inset-0 before:bg-gradient-to-r before:from-automotive-gold/5 before:via-transparent before:to-automotive-gold/5",
-      "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gradient-to-r after:from-transparent after:via-automotive-gold/40 after:to-transparent",
-      className
-    )}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="absolute inset-0 bg-automotive-gold/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-automotive-gold to-automotive-gold-dark rounded-full flex items-center justify-center shadow-lg">
-                <Car className="w-5 h-5 lg:w-6 lg:h-6 text-automotive-black" />
-              </div>
-            </div>
-            <span className="text-lg lg:text-xl font-bold text-automotive-gold tracking-tight">
-              Car Leopard
-            </span>
+    <>
+      <style jsx>{`
+        .cl-nav { 
+          position: sticky; 
+          top: 0; 
+          z-index: 50; 
+          background: #fff; 
+          border-bottom: 1px solid #eee; 
+        }
+        .cl-nav-inner { 
+          max-width: 1200px; 
+          margin: 0 auto; 
+          padding: 14px 20px; 
+          display: flex; 
+          align-items: center; 
+          gap: 16px; 
+        }
+        .cl-logo { 
+          font-weight: 700; 
+          letter-spacing: .2px; 
+          color: var(--ink); 
+          text-decoration: none; 
+        }
+        .cl-links { 
+          display: flex; 
+          gap: 18px; 
+          margin-left: auto; 
+        }
+        .cl-links a { 
+          color: #333; 
+          text-decoration: none; 
+          font-weight: 500; 
+        }
+        .cl-links a:hover { 
+          color: var(--gold); 
+        }
+        .cl-cta .cl-btn { 
+          background: var(--gold); 
+          color: #000; 
+          padding: 10px 14px; 
+          border-radius: 999px; 
+          text-decoration: none; 
+          font-weight: 700; 
+        }
+        .cl-burger { 
+          display: none; 
+          margin-left: 8px; 
+          width: 38px; 
+          height: 34px; 
+          background: transparent; 
+          border: 0; 
+          cursor: pointer; 
+        }
+        .cl-burger span { 
+          display: block; 
+          height: 2px; 
+          background: #222; 
+          margin: 6px 0; 
+        }
+        @media (max-width: 980px) {
+          .cl-links { 
+            display: none; 
+            position: absolute; 
+            top: 64px; 
+            left: 0; 
+            right: 0; 
+            background: #fff; 
+            border-top: 1px solid #eee; 
+            flex-direction: column; 
+            padding: 12px 20px; 
+          }
+          .cl-links.show { 
+            display: flex; 
+          }
+          .cl-burger { 
+            display: block; 
+            margin-left: auto; 
+          }
+        }
+      `}</style>
+
+      <header className={cn("cl-nav", className)}>
+        <div className="cl-nav-inner">
+          <a className="cl-logo" href="/">
+            Car Leopard
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8" aria-label="Primary">
+          <nav className={cn("cl-links", isMenuOpen && "show")} aria-label="Primary">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="relative text-gray-300 hover:text-automotive-gold transition-colors duration-200 py-2 group"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-automotive-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
 
-          {/* Desktop CTA Button */}
-          <div className="hidden lg:flex items-center">
-            <a
-              href="/quiz"
-              className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-automotive-gold to-automotive-gold-dark hover:from-automotive-gold-dark hover:to-automotive-gold text-automotive-black font-semibold rounded-lg shadow-lg hover:shadow-automotive-gold/25 transition-all duration-300"
-            >
+          <div className="cl-cta">
+            <a className="cl-btn" href="/quiz">
               Car Quiz
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-gray-300 hover:text-automotive-gold hover:bg-automotive-gold/10"
-              >
-                <Menu className="w-5 h-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent 
-              side="right" 
-              className="w-80 bg-automotive-black border-l border-automotive-gold/20 backdrop-blur-xl"
-            >
-              <div className="flex flex-col h-full">
-                {/* Mobile Header */}
-                <div className="flex items-center justify-between pb-6 border-b border-automotive-gold/20">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-automotive-gold to-automotive-gold-dark rounded-full flex items-center justify-center">
-                      <Car className="w-5 h-5 text-automotive-black" />
-                    </div>
-                    <span className="text-lg font-bold text-automotive-gold">Car Leopard</span>
-                  </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setIsOpen(false)}
-                    className="text-gray-300 hover:text-automotive-gold"
-                  >
-                    <X className="w-5 h-5" />
-                  </Button>
-                </div>
-
-                {/* Mobile Navigation */}
-                <nav className="flex-1 py-6 space-y-2" aria-label="Primary">
-                  {navItems.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block px-4 py-3 text-gray-300 hover:text-automotive-gold hover:bg-automotive-gold/10 rounded-lg transition-all duration-200"
-                    >
-                      {item.label}
-                    </a>
-                  ))}
-                </nav>
-
-                {/* Mobile CTA Button */}
-                <div className="pt-6 border-t border-automotive-gold/20">
-                  <a
-                    href="/quiz"
-                    onClick={() => setIsOpen(false)}
-                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-automotive-gold to-automotive-gold-dark hover:from-automotive-gold-dark hover:to-automotive-gold text-automotive-black font-semibold rounded-lg transition-all duration-300"
-                  >
-                    Car Quiz
-                  </a>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+          <button 
+            className="cl-burger" 
+            aria-label="Menu" 
+            aria-expanded={isMenuOpen}
+            onClick={toggleMenu}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-      </div>
-
-      {/* Leopard Pattern Accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-automotive-gold to-transparent opacity-60"></div>
-      <div className="absolute top-0 left-4 w-2 h-2 bg-automotive-gold/30 rounded-full animate-pulse"></div>
-      <div className="absolute top-2 right-8 w-1 h-1 bg-automotive-gold/40 rounded-full animate-pulse delay-300"></div>
-      <div className="absolute top-1 left-1/3 w-1.5 h-1.5 bg-automotive-gold/20 rounded-full animate-pulse delay-700"></div>
-    </nav>
+      </header>
+    </>
   );
 }
