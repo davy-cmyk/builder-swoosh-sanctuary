@@ -107,15 +107,16 @@ export function Navbar({ className }: NavbarProps) {
           top: 100%;
           left: 0;
           min-width: 200px;
-          background: #fff;
-          border: 1px solid #eee;
+          background: hsl(var(--automotive-black-light));
+          border: 1px solid hsl(var(--automotive-gold) / 0.3);
           border-radius: 8px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.4);
           padding: 8px 0;
           opacity: 0;
           visibility: hidden;
           transform: translateY(-10px);
           transition: all 0.2s ease;
+          backdrop-filter: blur(8px);
         }
         .cl-dropdown:hover .cl-dropdown-menu {
           opacity: 1;
