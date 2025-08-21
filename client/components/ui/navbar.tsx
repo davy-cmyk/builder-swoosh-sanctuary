@@ -259,6 +259,18 @@ export function Navbar({ className }: NavbarProps) {
           transform: translateX(4px);
           font-weight: 700;
         }
+        .cl-dropdown-menu .ml-4 a {
+          padding: 8px 16px;
+          font-weight: 500;
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.8);
+          margin: 0 4px;
+        }
+        .cl-dropdown-menu .ml-4 a:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+          color: hsl(var(--automotive-black));
+          transform: translateX(2px);
+        }
         .cl-chevron {
           width: 16px;
           height: 16px;
