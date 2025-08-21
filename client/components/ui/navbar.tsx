@@ -143,13 +143,20 @@ export function Navbar({ className }: NavbarProps) {
         .cl-dropdown:hover .cl-chevron {
           transform: rotate(180deg);
         }
-        .cl-cta .cl-btn { 
-          background: var(--gold); 
-          color: #000; 
-          padding: 10px 14px; 
-          border-radius: 999px; 
-          text-decoration: none; 
-          font-weight: 700; 
+        .cl-cta .cl-btn {
+          background: hsl(var(--automotive-gold));
+          color: hsl(var(--automotive-black));
+          padding: 10px 14px;
+          border-radius: 999px;
+          text-decoration: none;
+          font-weight: 700;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 8px hsla(var(--automotive-gold) / 0.3);
+        }
+        .cl-cta .cl-btn:hover {
+          background: hsl(var(--automotive-gold-dark));
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px hsla(var(--automotive-gold) / 0.4);
         }
         .cl-burger { 
           display: none; 
