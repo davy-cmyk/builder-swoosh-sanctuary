@@ -227,10 +227,12 @@ export function Navbar({ className }: NavbarProps) {
             visibility: visible;
             transform: none;
             box-shadow: none;
-            border: none;
-            padding: 0;
+            border: 1px solid hsl(var(--automotive-gold) / 0.3);
+            padding: 8px 0;
             margin-left: 16px;
             margin-top: 8px;
+            background: linear-gradient(135deg, hsl(var(--automotive-gold) / 0.2), hsl(var(--automotive-gold-dark) / 0.2));
+            border-radius: 8px;
           }
           .cl-dropdown > button {
             width: 100%;
