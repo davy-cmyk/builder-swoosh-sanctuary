@@ -209,7 +209,7 @@ export function Navbar({ className }: NavbarProps) {
             top: 64px; 
             left: 0; 
             right: 0; 
-            background: hsl(var(--automotive-black));
+            background: linear-gradient(to bottom right, hsl(var(--automotive-black)), hsl(var(--automotive-black-light)), hsl(var(--automotive-black)));
             border-top: 1px solid hsl(var(--automotive-gold) / 0.2); 
             flex-direction: column; 
             padding: 12px 20px; 
