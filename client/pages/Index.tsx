@@ -42,9 +42,9 @@ export default function Index() {
                 <video
                   className="w-full rounded-2xl"
                   autoPlay
-                  muted
                   loop
                   playsInline
+                  controls
                   poster=""
                 >
                   <source src="https://cdn.builder.io/o/assets%2Feb65e24bd52b4ebfae84a3c2f2e93a50%2Fa1441c5e9fe645f1aa7dd5e69516099c?alt=media&token=cbf253e4-c558-4c8c-905e-15ed2a881a08&apiKey=eb65e24bd52b4ebfae84a3c2f2e93a50" type="video/mp4" />
