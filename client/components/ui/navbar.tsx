@@ -306,7 +306,7 @@ export function Navbar({ className }: NavbarProps) {
 
           <div className="cl-cta">
             <a className="cl-btn" href="/quiz">
-              Quiz
+              Get Started
             </a>
           </div>
 
