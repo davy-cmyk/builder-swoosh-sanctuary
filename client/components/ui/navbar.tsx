@@ -173,8 +173,8 @@ export function Navbar({ className }: NavbarProps) {
             top: 64px; 
             left: 0; 
             right: 0; 
-            background: #fff; 
-            border-top: 1px solid #eee; 
+            background: hsl(var(--automotive-black));
+            border-top: 1px solid hsl(var(--automotive-gold) / 0.2); 
             flex-direction: column; 
             padding: 12px 20px; 
           }
