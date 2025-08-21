@@ -64,97 +64,85 @@ export function Navbar({ className }: NavbarProps) {
     localStorage.setItem('language', newLanguage);
   };
 
-  const dropdownItems = [
-    {
-      label: language === 'en' ? "Shop Smart" : "Compra Inteligente",
-      items: [
-        { label: language === 'en' ? "Local Deals" : "Ofertas Locales", href: "/deals" },
-        { 
-          label: language === 'en' ? "Top by Fuel Type" : "Mejores por Combustible", 
-          href: "/fuel-picks",
-          subitems: [
-            { label: "Gas", href: "/fuel-picks/gas" },
-            { label: "Hybrid", href: "/fuel-picks/hybrid" },
-            { label: "EV", href: "/fuel-picks/ev" },
-            { label: "Diesel", href: "/fuel-picks/diesel" }
-          ]
-        },
-        { label: language === 'en' ? "Cars That Hold Value" : "Autos que Mantienen Valor", href: "/value-hold" },
-        { label: language === 'en' ? "Cars to Avoid" : "Autos a Evitar", href: "/cars-to-avoid" },
-        { label: language === 'en' ? "Compare Vehicles" : "Comparar Vehículos", href: "/compare" },
-        { label: language === 'en' ? "Car Quiz" : "Quiz de Autos", href: "/quiz" }
-      ]
-    },
-    {
-      label: language === 'en' ? "Buy Smarter" : "Compra Mejor", 
-      items: [
-        { label: "Smart Buyer™ Report", href: "/smart-buyer-report" },
-        { label: language === 'en' ? "Sample Report" : "Reporte de Muestra", href: "/smart-buyer-report/sample" },
-        { label: "RecallGuard™ (Free Recall Check)", href: "/recall-check" },
-        { label: "TradeMax™ (Trade-in options)", href: "/trademax" },
-        { label: language === 'en' ? "Verified Dealers" : "Concesionarios Verificados", href: "/verified-dealers" },
-        { label: "Dealer Scorecards (Premium)", href: "/dealer-scorecards" },
-        { label: "No-Sell Mode™ (Privacy choices)", href: "/no-sell-mode" },
-        { label: language === 'en' ? "Reliability Index" : "Índice de Confiabilidad", href: "/reliability-index" },
-        { label: language === 'en' ? "Long-Term Cost Curve" : "Curva de Costo a Largo Plazo", href: "/cost-curve" },
-        { label: language === 'en' ? "Auction History" : "Historial de Subastas", href: "/auction-history" },
-        { label: language === 'en' ? "Vehicle Story" : "Historia del Vehículo", href: "/vehicle-story" },
-        { label: language === 'en' ? "Owner's Manual Access" : "Acceso al Manual del Propietario", href: "/owners-manual" }
-      ]
-    },
-    {
-      label: language === 'en' ? "Tools" : "Herramientas",
-      items: [
-        { label: language === 'en' ? "License Plate Lookup" : "Búsqueda por Placa", href: "/plate-lookup" },
-        { label: language === 'en' ? "VIN Decoder" : "Decodificador VIN", href: "/vin-decoder" },
-        { label: language === 'en' ? "Depreciation Calculator" : "Calculadora de Depreciación", href: "/depreciation" },
-        { 
-          label: language === 'en' ? "Finance & Lease Calculators" : "Calculadoras de Financiamiento", 
-          href: "/calculators",
-          subitems: [
-            { label: language === 'en' ? "Loan" : "Préstamo", href: "/calculators/loan" },
-            { label: language === 'en' ? "Lease" : "Arrendamiento", href: "/calculators/lease" }
-          ]
-        },
-        { label: language === 'en' ? "Interest Rate Tracker" : "Rastreador de Tasas", href: "/rates" },
-        { label: "My Appointment, My Way™", href: "/appointments" },
-        { label: "LotProof™ Dealer Verification", href: "/lotproof" },
-        { label: "Dealer Decoder™", href: "/dealer-decoder" },
-        { label: language === 'en' ? "Digital Garage" : "Garaje Digital", href: "/garage" },
-        { label: language === 'en' ? "Breakdown Help Center" : "Centro de Ayuda", href: "/breakdown-help" },
-        { label: language === 'en' ? "Roadside Assistance" : "Asistencia en Carretera", href: "/roadside" },
-        { label: language === 'en' ? "Storage & Transport" : "Almacenamiento y Transporte", href: "/transport" },
-        { label: language === 'en' ? "Accessories" : "Accesorios", href: "/accessories" }
-      ]
-    },
-    {
-      label: language === 'en' ? "Learn" : "Aprender",
-      items: [
-        { label: language === 'en' ? "How It Works" : "Cómo Funciona", href: "/how-it-works" },
-        { 
-          label: "F&I Smart Add-On Hub", 
-          href: "/fi-hub",
-          subitems: [
-            { label: language === 'en' ? "Warranty" : "Garantía", href: "/fi-hub/warranty" },
-            { label: "GAP", href: "/fi-hub/gap" },
-            { label: language === 'en' ? "Maintenance Plans" : "Planes de Mantenimiento", href: "/fi-hub/maintenance-plans" },
-            { label: language === 'en' ? "Tire & Wheel" : "Llantas y Ruedas", href: "/fi-hub/tire-wheel" }
-          ]
-        },
-        { 
-          label: "Davy Car Academy", 
-          href: "/academy",
-          subitems: [
-            { label: language === 'en' ? "Dashboard Lights" : "Luces del Tablero", href: "/academy/dashboard-lights" },
-            { label: language === 'en' ? "Maintenance by Mileage" : "Mantenimiento por Millaje", href: "/academy/maintenance-intervals" },
-            { label: language === 'en' ? "Buying Playbook" : "Guía de Compra", href: "/academy/buying-playbook" }
-          ]
-        },
-        { label: "FAQs", href: "/faq" },
-        { label: "Blog", href: "/blog" }
-      ]
-    }
-  ];
+  const menuData = {
+    "menu": [
+      {
+        "label": "ShopSmart",
+        "items": [
+          {"label":"Local Deals","url":"/deals"},
+          {"label":"Top by Fuel Type","url":"/fuel-picks","children":[
+            {"label":"Gas","url":"/fuel-picks/gas"},
+            {"label":"Hybrid","url":"/fuel-picks/hybrid"},
+            {"label":"EV","url":"/fuel-picks/ev"},
+            {"label":"Diesel","url":"/fuel-picks/diesel"}
+          ]},
+          {"label":"Cars That Hold Value","url":"/value-hold"},
+          {"label":"Cars to Avoid","url":"/cars-to-avoid"},
+          {"label":"Compare Vehicles","url":"/compare"},
+          {"label":"Car Quiz","url":"/quiz"}
+        ]
+      },
+      {
+        "label": "Buy Smarter",
+        "items": [
+          {"label":"Smart Buyer™ Report","url":"/smart-buyer-report"},
+          {"label":"RecallGuard™","url":"/recall-check"},
+          {"label":"TradeMax™","url":"/trademax"},
+          {"label":"Verified Dealers","url":"/verified-dealers"},
+          {"label":"Dealer Scorecards","url":"/dealer-scorecards"},
+          {"label":"No-Sell Mode™","url":"/no-sell-mode"},
+          {"label":"Reliability Index","url":"/reliability-index"},
+          {"label":"Long-Term Cost Curve","url":"/cost-curve"},
+          {"label":"Auction History","url":"/auction-history"},
+          {"label":"Vehicle Story","url":"/vehicle-story"},
+          {"label":"Owner's Manual Access","url":"/owners-manual"}
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          {"label":"License Plate Lookup","url":"/plate-lookup"},
+          {"label":"VIN Decoder","url":"/vin-decoder"},
+          {"label":"Depreciation Calculator","url":"/depreciation"},
+          {"label":"Finance & Lease Calculators","url":"/calculators","children":[
+            {"label":"Loan","url":"/calculators/loan"},
+            {"label":"Lease","url":"/calculators/lease"}
+          ]},
+          {"label":"Interest Rate Tracker","url":"/rates"},
+          {"label":"My Appointment, My Way™","url":"/appointments"},
+          {"label":"LotProof™ Dealer Verification","url":"/lotproof"},
+          {"label":"Dealer Decoder™","url":"/dealer-decoder"},
+          {"label":"Digital Garage","url":"/garage"},
+          {"label":"Breakdown Help Center","url":"/breakdown-help"},
+          {"label":"Roadside Assistance","url":"/roadside"},
+          {"label":"Storage & Transport","url":"/transport"},
+          {"label":"Accessories","url":"/accessories"}
+        ]
+      },
+      {
+        "label": "Learn",
+        "items": [
+          {"label":"How It Works","url":"/how-it-works"},
+          {"label":"F&I Smart Add-On Hub","url":"/fi-hub","children":[
+            {"label":"Warranty","url":"/fi-hub/warranty"},
+            {"label":"GAP","url":"/fi-hub/gap"},
+            {"label":"Maintenance Plans","url":"/fi-hub/maintenance-plans"},
+            {"label":"Tire & Wheel","url":"/fi-hub/tire-wheel"}
+          ]},
+          {"label":"Davy Car Academy","url":"/academy","children":[
+            {"label":"Dashboard Lights","url":"/academy/dashboard-lights"},
+            {"label":"Maintenance by Mileage","url":"/academy/maintenance-intervals"},
+            {"label":"Buying Playbook","url":"/academy/buying-playbook"}
+          ]},
+          {"label":"FAQs","url":"/faq"},
+          {"label":"Blog","url":"/blog"}
+        ]
+      }
+    ],
+    "cta": {"label":"Get Your Report","url":"/smart-buyer-report"}
+  };
+
+  const dropdownItems = menuData.menu;
 
   return (
     <>
