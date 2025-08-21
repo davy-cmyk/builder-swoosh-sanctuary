@@ -149,17 +149,19 @@ export function Navbar({ className }: NavbarProps) {
         .cl-dropdown-menu a {
           display: block;
           padding: 12px 20px;
-          color: #ffffff;
+          color: hsl(var(--automotive-black));
           text-decoration: none;
-          font-weight: 500;
+          font-weight: 600;
           transition: all 0.2s ease;
           border-radius: 6px;
           margin: 0 8px;
+          position: relative;
         }
         .cl-dropdown-menu a:hover {
-          background-color: hsl(var(--automotive-gold) / 0.2);
-          color: hsl(var(--automotive-gold));
+          background-color: rgba(0, 0, 0, 0.1);
+          color: hsl(var(--automotive-black));
           transform: translateX(4px);
+          font-weight: 700;
         }
         .cl-chevron {
           width: 16px;
