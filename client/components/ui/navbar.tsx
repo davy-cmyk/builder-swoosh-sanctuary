@@ -91,19 +91,22 @@ export function Navbar({ className }: NavbarProps) {
           z-index: 1001;
         }
         .cl-dropdown > button {
-          color: hsl(var(--foreground) / 0.8);
+          color: #ffffff;
           text-decoration: none;
           font-weight: 500;
           background: none;
           border: none;
           cursor: pointer;
-          padding: 8px 0;
+          padding: 8px 12px;
           display: flex;
           align-items: center;
-          gap: 4px;
+          gap: 6px;
+          border-radius: 6px;
+          transition: all 0.2s ease;
         }
         .cl-dropdown > button:hover {
           color: hsl(var(--automotive-gold));
+          background: hsl(var(--automotive-gold) / 0.1);
         }
         .cl-dropdown-menu {
           position: absolute;
