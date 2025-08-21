@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
@@ -6,6 +6,8 @@ interface NavbarProps {
 }
 
 export function Navbar({ className }: NavbarProps) {
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
   useEffect(() => {
     // Mobile menu toggle script
     const burger = document.querySelector('.cl-burger');
@@ -25,13 +27,31 @@ export function Navbar({ className }: NavbarProps) {
     }
   }, []);
 
-  const navItems = [
-    { label: "Smart Buyer™", href: "/smart-buyer-report" },
-    { label: "Recall Check", href: "/recall-check" },
-    { label: "TradeMax™", href: "/trademax" },
-    { label: "Cars That Hold Value", href: "/value-hold" },
-    { label: "Cars to Avoid", href: "/cars-to-avoid" },
-    { label: "Top by Fuel Type", href: "/fuel-picks" }
+  const dropdownItems = [
+    {
+      label: "Shop Smart",
+      items: [
+        { label: "Smart Buyer™ Report", href: "/smart-buyer-report" },
+        { label: "Recall Check", href: "/recall-check" },
+        { label: "Cars That Hold Value", href: "/value-hold" }
+      ]
+    },
+    {
+      label: "Buy Smarter", 
+      items: [
+        { label: "Cars to Avoid", href: "/cars-to-avoid" },
+        { label: "TradeMax™", href: "/trademax" },
+        { label: "Top by Fuel Type", href: "/fuel-picks" }
+      ]
+    },
+    {
+      label: "Tools",
+      items: [
+        { label: "VIN Check", href: "/vin-check" },
+        { label: "Market Analysis", href: "/market-analysis" },
+        { label: "Vehicle History", href: "/vehicle-history" }
+      ]
+    }
   ];
 
   return (
@@ -63,13 +83,63 @@ export function Navbar({ className }: NavbarProps) {
           gap: 18px; 
           margin-left: auto; 
         }
-        .cl-links a { 
+        .cl-dropdown {
+          position: relative;
+        }
+        .cl-dropdown > button {
           color: #333; 
           text-decoration: none; 
-          font-weight: 500; 
+          font-weight: 500;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 8px 0;
+          display: flex;
+          align-items: center;
+          gap: 4px;
         }
-        .cl-links a:hover { 
-          color: var(--gold); 
+        .cl-dropdown > button:hover {
+          color: var(--gold);
+        }
+        .cl-dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 200px;
+          background: #fff;
+          border: 1px solid #eee;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          padding: 8px 0;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-10px);
+          transition: all 0.2s ease;
+        }
+        .cl-dropdown:hover .cl-dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        .cl-dropdown-menu a {
+          display: block;
+          padding: 10px 16px;
+          color: #333;
+          text-decoration: none;
+          font-weight: 500;
+          transition: background-color 0.2s ease;
+        }
+        .cl-dropdown-menu a:hover {
+          background-color: #f5f5f5;
+          color: var(--gold);
+        }
+        .cl-chevron {
+          width: 16px;
+          height: 16px;
+          transition: transform 0.2s ease;
+        }
+        .cl-dropdown:hover .cl-chevron {
+          transform: rotate(180deg);
         }
         .cl-cta .cl-btn { 
           background: var(--gold); 
@@ -113,6 +183,21 @@ export function Navbar({ className }: NavbarProps) {
             display: block; 
             margin-left: auto; 
           }
+          .cl-dropdown-menu {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+            border: none;
+            padding: 0;
+            margin-left: 16px;
+            margin-top: 8px;
+          }
+          .cl-dropdown > button {
+            width: 100%;
+            justify-content: space-between;
+          }
         }
       `}</style>
 
@@ -123,28 +208,40 @@ export function Navbar({ className }: NavbarProps) {
           </a>
 
           <nav className="cl-links" aria-label="Primary">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => {
-                  // Close mobile menu when clicking a link
-                  const links = document.querySelector('.cl-links');
-                  const burger = document.querySelector('.cl-burger');
-                  if (links && burger) {
-                    links.classList.remove('show');
-                    burger.setAttribute('aria-expanded', 'false');
-                  }
-                }}
-              >
-                {item.label}
-              </a>
+            {dropdownItems.map((dropdown) => (
+              <div key={dropdown.label} className="cl-dropdown">
+                <button>
+                  {dropdown.label}
+                  <svg className="cl-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className="cl-dropdown-menu">
+                  {dropdown.items.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => {
+                        // Close mobile menu when clicking a link
+                        const links = document.querySelector('.cl-links');
+                        const burger = document.querySelector('.cl-burger');
+                        if (links && burger) {
+                          links.classList.remove('show');
+                          burger.setAttribute('aria-expanded', 'false');
+                        }
+                      }}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             ))}
           </nav>
 
           <div className="cl-cta">
             <a className="cl-btn" href="/quiz">
-              Car Quiz
+              Quiz
             </a>
           </div>
 
