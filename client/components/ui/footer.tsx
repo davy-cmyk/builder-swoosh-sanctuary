@@ -67,10 +67,6 @@ export function Footer() {
             <span className="separator">•</span>
             <a href="/unsubscribe">Unsubscribe</a>
           </div>
-
-          <div className="cl-foot-bottom">
-            <p>© 2025 Car Leopard. All rights reserved.</p>
-          </div>
         </div>
       </footer>
     </>
