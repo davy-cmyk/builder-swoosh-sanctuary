@@ -57,23 +57,14 @@ export function Navbar({ className }: NavbarProps) {
             ))}
           </nav>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-gray-300 hover:text-automotive-gold hover:bg-automotive-gold/10 border border-transparent hover:border-automotive-gold/20"
+          {/* Desktop CTA Button */}
+          <div className="hidden lg:flex items-center">
+            <a
+              href="/quiz"
+              className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-automotive-gold to-automotive-gold-dark hover:from-automotive-gold-dark hover:to-automotive-gold text-automotive-black font-semibold rounded-lg shadow-lg hover:shadow-automotive-gold/25 transition-all duration-300"
             >
-              <Search className="w-4 h-4 mr-2" />
-              Search VIN
-            </Button>
-            <Button
-              size="sm"
-              className="bg-gradient-to-r from-automotive-gold to-automotive-gold-dark hover:from-automotive-gold-dark hover:to-automotive-gold text-automotive-black font-semibold shadow-lg hover:shadow-automotive-gold/25 transition-all duration-300"
-            >
-              <Shield className="w-4 h-4 mr-2" />
-              Get Free Report
-            </Button>
+              Car Quiz
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
