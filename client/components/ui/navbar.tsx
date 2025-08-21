@@ -14,7 +14,7 @@ export function Navbar({ className }: NavbarProps) {
     // Load saved theme and language from localStorage
     const savedTheme = localStorage.getItem('theme');
     const savedLanguage = localStorage.getItem('language') as 'en' | 'es';
-
+    
     if (savedTheme === 'light') {
       setIsDarkMode(false);
       document.documentElement.classList.remove('dark');
@@ -22,7 +22,7 @@ export function Navbar({ className }: NavbarProps) {
       setIsDarkMode(true);
       document.documentElement.classList.add('dark');
     }
-
+    
     if (savedLanguage) {
       setLanguage(savedLanguage);
     }
@@ -48,7 +48,7 @@ export function Navbar({ className }: NavbarProps) {
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
     setIsDarkMode(newTheme);
-
+    
     if (newTheme) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
@@ -68,25 +68,90 @@ export function Navbar({ className }: NavbarProps) {
     {
       label: language === 'en' ? "Shop Smart" : "Compra Inteligente",
       items: [
-        { label: language === 'en' ? "Smart Buyer™ Report" : "Reporte Smart Buyer™", href: "/smart-buyer-report" },
-        { label: language === 'en' ? "Recall Check" : "Verificación de Recalls", href: "/recall-check" },
-        { label: language === 'en' ? "Cars That Hold Value" : "Autos que Mantienen Valor", href: "/value-hold" }
+        { label: language === 'en' ? "Local Deals" : "Ofertas Locales", href: "/deals" },
+        { 
+          label: language === 'en' ? "Top by Fuel Type" : "Mejores por Combustible", 
+          href: "/fuel-picks",
+          subitems: [
+            { label: "Gas", href: "/fuel-picks/gas" },
+            { label: "Hybrid", href: "/fuel-picks/hybrid" },
+            { label: "EV", href: "/fuel-picks/ev" },
+            { label: "Diesel", href: "/fuel-picks/diesel" }
+          ]
+        },
+        { label: language === 'en' ? "Cars That Hold Value" : "Autos que Mantienen Valor", href: "/value-hold" },
+        { label: language === 'en' ? "Cars to Avoid" : "Autos a Evitar", href: "/cars-to-avoid" },
+        { label: language === 'en' ? "Compare Vehicles" : "Comparar Vehículos", href: "/compare" },
+        { label: language === 'en' ? "Car Quiz" : "Quiz de Autos", href: "/quiz" }
       ]
     },
     {
-      label: language === 'en' ? "Buy Smarter" : "Compra Mejor",
+      label: language === 'en' ? "Buy Smarter" : "Compra Mejor", 
       items: [
-        { label: language === 'en' ? "Cars to Avoid" : "Autos a Evitar", href: "/cars-to-avoid" },
-        { label: "TradeMax™", href: "/trademax" },
-        { label: language === 'en' ? "Top by Fuel Type" : "Mejores por Combustible", href: "/fuel-picks" }
+        { label: "Smart Buyer™ Report", href: "/smart-buyer-report" },
+        { label: language === 'en' ? "Sample Report" : "Reporte de Muestra", href: "/smart-buyer-report/sample" },
+        { label: "RecallGuard™ (Free Recall Check)", href: "/recall-check" },
+        { label: "TradeMax™ (Trade-in options)", href: "/trademax" },
+        { label: language === 'en' ? "Verified Dealers" : "Concesionarios Verificados", href: "/verified-dealers" },
+        { label: "Dealer Scorecards (Premium)", href: "/dealer-scorecards" },
+        { label: "No-Sell Mode™ (Privacy choices)", href: "/no-sell-mode" },
+        { label: language === 'en' ? "Reliability Index" : "Índice de Confiabilidad", href: "/reliability-index" },
+        { label: language === 'en' ? "Long-Term Cost Curve" : "Curva de Costo a Largo Plazo", href: "/cost-curve" },
+        { label: language === 'en' ? "Auction History" : "Historial de Subastas", href: "/auction-history" },
+        { label: language === 'en' ? "Vehicle Story" : "Historia del Vehículo", href: "/vehicle-story" },
+        { label: language === 'en' ? "Owner's Manual Access" : "Acceso al Manual del Propietario", href: "/owners-manual" }
       ]
     },
     {
       label: language === 'en' ? "Tools" : "Herramientas",
       items: [
-        { label: language === 'en' ? "VIN Check" : "Verificación VIN", href: "/vin-check" },
-        { label: language === 'en' ? "Market Analysis" : "Análisis de Mercado", href: "/market-analysis" },
-        { label: language === 'en' ? "Vehicle History" : "Historial del Vehículo", href: "/vehicle-history" }
+        { label: language === 'en' ? "License Plate Lookup" : "Búsqueda por Placa", href: "/plate-lookup" },
+        { label: language === 'en' ? "VIN Decoder" : "Decodificador VIN", href: "/vin-decoder" },
+        { label: language === 'en' ? "Depreciation Calculator" : "Calculadora de Depreciación", href: "/depreciation" },
+        { 
+          label: language === 'en' ? "Finance & Lease Calculators" : "Calculadoras de Financiamiento", 
+          href: "/calculators",
+          subitems: [
+            { label: language === 'en' ? "Loan" : "Préstamo", href: "/calculators/loan" },
+            { label: language === 'en' ? "Lease" : "Arrendamiento", href: "/calculators/lease" }
+          ]
+        },
+        { label: language === 'en' ? "Interest Rate Tracker" : "Rastreador de Tasas", href: "/rates" },
+        { label: "My Appointment, My Way™", href: "/appointments" },
+        { label: "LotProof™ Dealer Verification", href: "/lotproof" },
+        { label: "Dealer Decoder™", href: "/dealer-decoder" },
+        { label: language === 'en' ? "Digital Garage" : "Garaje Digital", href: "/garage" },
+        { label: language === 'en' ? "Breakdown Help Center" : "Centro de Ayuda", href: "/breakdown-help" },
+        { label: language === 'en' ? "Roadside Assistance" : "Asistencia en Carretera", href: "/roadside" },
+        { label: language === 'en' ? "Storage & Transport" : "Almacenamiento y Transporte", href: "/transport" },
+        { label: language === 'en' ? "Accessories" : "Accesorios", href: "/accessories" }
+      ]
+    },
+    {
+      label: language === 'en' ? "Learn" : "Aprender",
+      items: [
+        { label: language === 'en' ? "How It Works" : "Cómo Funciona", href: "/how-it-works" },
+        { 
+          label: "F&I Smart Add-On Hub", 
+          href: "/fi-hub",
+          subitems: [
+            { label: language === 'en' ? "Warranty" : "Garantía", href: "/fi-hub/warranty" },
+            { label: "GAP", href: "/fi-hub/gap" },
+            { label: language === 'en' ? "Maintenance Plans" : "Planes de Mantenimiento", href: "/fi-hub/maintenance-plans" },
+            { label: language === 'en' ? "Tire & Wheel" : "Llantas y Ruedas", href: "/fi-hub/tire-wheel" }
+          ]
+        },
+        { 
+          label: "Davy Car Academy", 
+          href: "/academy",
+          subitems: [
+            { label: language === 'en' ? "Dashboard Lights" : "Luces del Tablero", href: "/academy/dashboard-lights" },
+            { label: language === 'en' ? "Maintenance by Mileage" : "Mantenimiento por Millaje", href: "/academy/maintenance-intervals" },
+            { label: language === 'en' ? "Buying Playbook" : "Guía de Compra", href: "/academy/buying-playbook" }
+          ]
+        },
+        { label: "FAQs", href: "/faq" },
+        { label: "Blog", href: "/blog" }
       ]
     }
   ];
@@ -94,12 +159,12 @@ export function Navbar({ className }: NavbarProps) {
   return (
     <>
       <style jsx>{`
-        .cl-nav {
-          position: sticky;
-          top: 0;
-          z-index: 100;
+        .cl-nav { 
+          position: sticky; 
+          top: 0; 
+          z-index: 100; 
           background: linear-gradient(to bottom right, hsl(var(--automotive-black)), hsl(var(--automotive-black-light)), hsl(var(--automotive-black)));
-          border-bottom: 1px solid hsl(var(--automotive-gold) / 0.2);
+          border-bottom: 1px solid hsl(var(--automotive-gold) / 0.2); 
           backdrop-filter: blur(8px);
           position: relative;
         }
@@ -110,24 +175,30 @@ export function Navbar({ className }: NavbarProps) {
           background: radial-gradient(circle at 30% 40%, rgba(255,215,0,0.05), transparent 50%);
           pointer-events: none;
         }
-        .cl-nav-inner {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 14px 20px;
-          display: flex;
-          align-items: center;
+        .cl-nav-inner { 
+          max-width: 1200px; 
+          margin: 0 auto; 
+          padding: 14px 20px; 
+          display: flex; 
+          align-items: center; 
           justify-content: center;
-          gap: 16px;
+          gap: 16px; 
         }
-        .cl-logo { 
-          font-weight: 700; 
-          letter-spacing: .2px; 
-          color: var(--ink); 
-          text-decoration: none; 
+        .cl-nav-inner::before {
+          content: '';
+          position: absolute;
+          top: 8px;
+          left: 20px;
+          width: 3px;
+          height: 3px;
+          background: hsl(var(--automotive-gold) / 0.6);
+          border-radius: 50%;
+          animation: pulse 2s infinite;
+          z-index: 2;
         }
-        .cl-links {
-          display: flex;
-          gap: 18px;
+        .cl-links { 
+          display: flex; 
+          gap: 18px; 
         }
         .cl-dropdown {
           position: relative;
@@ -136,8 +207,8 @@ export function Navbar({ className }: NavbarProps) {
           z-index: 1001;
         }
         .cl-dropdown > button {
-          color: hsl(var(--automotive-gold));
-          text-decoration: none;
+          color: hsl(var(--automotive-gold)); 
+          text-decoration: none; 
           font-weight: 500;
           background: none;
           border: none;
@@ -157,7 +228,7 @@ export function Navbar({ className }: NavbarProps) {
           position: absolute;
           top: 100%;
           left: 0;
-          min-width: 200px;
+          min-width: 250px;
           background: linear-gradient(135deg, hsl(var(--automotive-gold)), hsl(var(--automotive-gold-dark)));
           border: 2px solid hsl(var(--automotive-gold-light));
           border-radius: 12px;
@@ -208,21 +279,6 @@ export function Navbar({ className }: NavbarProps) {
         .cl-dropdown:hover .cl-chevron {
           transform: rotate(180deg);
         }
-        .cl-cta .cl-btn {
-          background: hsl(var(--automotive-gold));
-          color: hsl(var(--automotive-black));
-          padding: 10px 14px;
-          border-radius: 999px;
-          text-decoration: none;
-          font-weight: 700;
-          transition: all 0.3s ease;
-          box-shadow: 0 2px 8px hsla(var(--automotive-gold) / 0.3);
-        }
-        .cl-cta .cl-btn:hover {
-          background: hsl(var(--automotive-gold-dark));
-          transform: translateY(-1px);
-          box-shadow: 0 4px 12px hsla(var(--automotive-gold) / 0.4);
-        }
         .cl-toggles {
           display: flex;
           align-items: center;
@@ -249,6 +305,21 @@ export function Navbar({ className }: NavbarProps) {
           align-items: center;
           gap: 4px;
         }
+        .cl-cta .cl-btn { 
+          background: hsl(var(--automotive-gold)); 
+          color: hsl(var(--automotive-black)); 
+          padding: 10px 14px; 
+          border-radius: 999px; 
+          text-decoration: none; 
+          font-weight: 700;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 8px hsla(var(--automotive-gold) / 0.3);
+        }
+        .cl-cta .cl-btn:hover {
+          background: hsl(var(--automotive-gold-dark));
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px hsla(var(--automotive-gold) / 0.4);
+        }
         .cl-burger { 
           display: none; 
           margin-left: 8px; 
@@ -258,11 +329,11 @@ export function Navbar({ className }: NavbarProps) {
           border: 0; 
           cursor: pointer; 
         }
-        .cl-burger span {
-          display: block;
-          height: 2px;
-          background: hsl(var(--automotive-gold));
-          margin: 6px 0;
+        .cl-burger span { 
+          display: block; 
+          height: 2px; 
+          background: hsl(var(--automotive-gold)); 
+          margin: 6px 0; 
           transition: all 0.3s ease;
         }
         @media (max-width: 980px) {
@@ -272,17 +343,17 @@ export function Navbar({ className }: NavbarProps) {
             top: 64px; 
             left: 0; 
             right: 0; 
-            background: linear-gradient(to bottom right, hsl(var(--automotive-black)), hsl(var(--automotive-black-light)), hsl(var(--automotive-black)));
-            border-top: 1px solid hsl(var(--automotive-gold) / 0.2); 
+            background: linear-gradient(to bottom right, hsl(var(--automotive-black)), hsl(var(--automotive-black-light)), hsl(var(--automotive-black))); 
+            border-top: 1px solid hsl(var(--automotive-gold) / 0.2);
             flex-direction: column; 
             padding: 12px 20px; 
           }
           .cl-links.show { 
             display: flex; 
           }
-          .cl-burger {
-            display: block;
-            margin-left: auto;
+          .cl-burger { 
+            display: block; 
+            margin-left: auto; 
           }
           .cl-toggles {
             display: none;
@@ -305,7 +376,7 @@ export function Navbar({ className }: NavbarProps) {
             justify-content: space-between;
           }
         }
-
+        
         /* Leopard Pattern Accents */
         .cl-nav::after {
           content: '';
@@ -317,18 +388,6 @@ export function Navbar({ className }: NavbarProps) {
           background: linear-gradient(90deg, transparent, hsl(var(--automotive-gold)), transparent);
           opacity: 0.6;
           z-index: 1;
-        }
-        .cl-nav-inner::before {
-          content: '';
-          position: absolute;
-          top: 8px;
-          left: 20px;
-          width: 3px;
-          height: 3px;
-          background: hsl(var(--automotive-gold) / 0.6);
-          border-radius: 50%;
-          animation: pulse 2s infinite;
-          z-index: 2;
         }
         @keyframes pulse {
           0%, 100% { opacity: 0.4; }
@@ -403,8 +462,8 @@ export function Navbar({ className }: NavbarProps) {
           </div>
 
           <div className="cl-cta">
-            <a className="cl-btn" href="/quiz">
-              {language === 'en' ? 'Get Started' : 'Comenzar'}
+            <a className="cl-btn" href="/smart-buyer-report">
+              {language === 'en' ? 'Get Your Report' : 'Obtén tu Reporte'}
             </a>
           </div>
 
