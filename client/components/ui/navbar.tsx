@@ -250,17 +250,19 @@ export function Navbar({ className }: NavbarProps) {
           height: 1px;
           background: linear-gradient(90deg, transparent, hsl(var(--automotive-gold)), transparent);
           opacity: 0.6;
+          z-index: 1;
         }
-        .cl-nav::before {
+        .cl-nav-inner::before {
           content: '';
           position: absolute;
           top: 8px;
           left: 20px;
           width: 3px;
           height: 3px;
-          background: hsl(var(--automotive-gold) / 0.4);
+          background: hsl(var(--automotive-gold) / 0.6);
           border-radius: 50%;
           animation: pulse 2s infinite;
+          z-index: 2;
         }
         @keyframes pulse {
           0%, 100% { opacity: 0.4; }
