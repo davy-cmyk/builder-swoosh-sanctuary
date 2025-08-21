@@ -10,6 +10,9 @@ import Index from "./pages/Index";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
+import Deals from "./pages/Deals";
+import FuelPicks from "./pages/FuelPicks";
+import SmartBuyerReport from "./pages/SmartBuyerReport";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
