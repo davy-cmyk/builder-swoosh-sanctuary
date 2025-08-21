@@ -60,7 +60,7 @@ export function Navbar({ className }: NavbarProps) {
         .cl-nav {
           position: sticky;
           top: 0;
-          z-index: 50;
+          z-index: 100;
           background: hsl(var(--automotive-black));
           border-bottom: 1px solid hsl(var(--automotive-gold) / 0.2);
           backdrop-filter: blur(8px);
