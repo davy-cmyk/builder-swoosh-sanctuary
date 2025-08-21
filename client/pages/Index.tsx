@@ -95,7 +95,7 @@ export default function Index() {
         <div className="relative container mx-auto px-4 py-6 md:py-12">
           <div className="max-w-6xl mx-auto">
             {/* Logo */}
-            <div className="text-center mb-8">
+            <div className="text-center mb-4">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Feb65e24bd52b4ebfae84a3c2f2e93a50%2Fe7952d7795f84a4f84cf9b0c98c7a36d?format=webp&width=800"
                 alt="Car Leopard Logo"
