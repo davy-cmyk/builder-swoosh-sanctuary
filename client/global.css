@@ -9,6 +9,10 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
+    --gold: #c9a227;
+    --ink: #111;
+    --stone: #f7f7f7;
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
