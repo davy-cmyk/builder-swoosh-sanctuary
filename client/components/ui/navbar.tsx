@@ -395,22 +395,46 @@ export function Navbar({ className }: NavbarProps) {
                   </svg>
                 </button>
                 <div className="cl-dropdown-menu">
-                  {dropdown.items.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => {
-                        // Close mobile menu when clicking a link
-                        const links = document.querySelector('.cl-links');
-                        const burger = document.querySelector('.cl-burger');
-                        if (links && burger) {
-                          links.classList.remove('show');
-                          burger.setAttribute('aria-expanded', 'false');
-                        }
-                      }}
-                    >
-                      {item.label}
-                    </a>
+                  {dropdown.items.map((item: any) => (
+                    <div key={item.label}>
+                      <a
+                        href={item.url}
+                        onClick={() => {
+                          // Close mobile menu when clicking a link
+                          const links = document.querySelector('.cl-links');
+                          const burger = document.querySelector('.cl-burger');
+                          if (links && burger) {
+                            links.classList.remove('show');
+                            burger.setAttribute('aria-expanded', 'false');
+                          }
+                        }}
+                        className="block px-4 py-3 text-automotive-black text-decoration-none font-weight-600 transition-all duration-200 border-radius-6 margin-0-8 relative hover:bg-black/10 hover:transform-translateX-4 hover:font-weight-700"
+                      >
+                        {item.label}
+                      </a>
+                      {item.children && (
+                        <div className="ml-4 space-y-1">
+                          {item.children.map((child: any) => (
+                            <a
+                              key={child.label}
+                              href={child.url}
+                              onClick={() => {
+                                // Close mobile menu when clicking a link
+                                const links = document.querySelector('.cl-links');
+                                const burger = document.querySelector('.cl-burger');
+                                if (links && burger) {
+                                  links.classList.remove('show');
+                                  burger.setAttribute('aria-expanded', 'false');
+                                }
+                              }}
+                              className="block px-4 py-2 text-automotive-black/80 text-decoration-none font-weight-500 transition-all duration-200 border-radius-4 margin-0-8 text-sm hover:bg-black/5 hover:text-automotive-black"
+                            >
+                              {child.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
