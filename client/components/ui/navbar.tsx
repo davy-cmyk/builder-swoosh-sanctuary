@@ -11,6 +11,22 @@ export function Navbar({ className }: NavbarProps) {
   const [language, setLanguage] = useState<'en' | 'es'>('en');
 
   useEffect(() => {
+    // Load saved theme and language from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    const savedLanguage = localStorage.getItem('language') as 'en' | 'es';
+
+    if (savedTheme === 'light') {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove('dark');
+    } else {
+      setIsDarkMode(true);
+      document.documentElement.classList.add('dark');
+    }
+
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+
     // Mobile menu toggle script
     const burger = document.querySelector('.cl-burger');
     const links = document.querySelector('.cl-links');
@@ -28,6 +44,25 @@ export function Navbar({ className }: NavbarProps) {
       };
     }
   }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+
+    if (newTheme) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
+
+  const toggleLanguage = () => {
+    const newLanguage = language === 'en' ? 'es' : 'en';
+    setLanguage(newLanguage);
+    localStorage.setItem('language', newLanguage);
+  };
 
   const dropdownItems = [
     {
