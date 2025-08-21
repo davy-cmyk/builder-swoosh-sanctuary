@@ -603,22 +603,6 @@ export default function Index() {
                 </div>
               </div>
 
-              {/* Footer */}
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-                <div className="flex items-center gap-2">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Feb65e24bd52b4ebfae84a3c2f2e93a50%2Fe7952d7795f84a4f84cf9b0c98c7a36d?format=webp&width=800"
-                    alt="Car Leopard Logo"
-                    className="h-6"
-                  />
-                  <span>© 2025. All rights reserved.</span>
-                </div>
-                <div className="flex gap-6">
-                  <a href="#" className="hover:text-automotive-gold transition-colors">Privacy Policy</a>
-                  <a href="#" className="hover:text-automotive-gold transition-colors">Terms of Service</a>
-                  <a href="#" className="hover:text-automotive-gold transition-colors">Contact</a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
