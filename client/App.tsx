@@ -31,6 +31,9 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cookies" element={<Cookies />} />
+          <Route path="/privacy/do-not-sell" element={<DoNotSell />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/deals" element={<Deals />} />
           <Route path="/fuel-picks" element={<FuelPicks />} />
           <Route path="/smart-buyer-report" element={<SmartBuyerReport />} />
