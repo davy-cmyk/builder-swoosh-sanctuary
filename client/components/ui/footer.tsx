@@ -32,16 +32,6 @@ export function Footer() {
           color: hsl(var(--foreground) / 0.4);
           user-select: none;
         }
-        .cl-foot-bottom {
-          text-align: center;
-          padding-top: 24px;
-          border-top: 1px solid hsl(var(--automotive-gold) / 0.1);
-        }
-        .cl-foot-bottom p {
-          color: hsl(var(--foreground) / 0.5);
-          margin: 0;
-          font-size: 14px;
-        }
         @media (max-width: 640px) {
           .cl-foot-links {
             flex-direction: column;
