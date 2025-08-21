@@ -280,9 +280,12 @@ export function Navbar({ className }: NavbarProps) {
           .cl-links.show { 
             display: flex; 
           }
-          .cl-burger { 
-            display: block; 
-            margin-left: auto; 
+          .cl-burger {
+            display: block;
+            margin-left: auto;
+          }
+          .cl-toggles {
+            display: none;
           }
           .cl-dropdown-menu {
             position: static;
