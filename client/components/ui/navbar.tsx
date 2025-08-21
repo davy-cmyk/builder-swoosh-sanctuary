@@ -167,11 +167,12 @@ export function Navbar({ className }: NavbarProps) {
           border: 0; 
           cursor: pointer; 
         }
-        .cl-burger span { 
-          display: block; 
-          height: 2px; 
-          background: #222; 
-          margin: 6px 0; 
+        .cl-burger span {
+          display: block;
+          height: 2px;
+          background: hsl(var(--automotive-gold));
+          margin: 6px 0;
+          transition: all 0.3s ease;
         }
         @media (max-width: 980px) {
           .cl-links { 
