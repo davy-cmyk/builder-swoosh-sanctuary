@@ -18,7 +18,6 @@ export function Footer() {
           flex-wrap: wrap;
           gap: 8px 16px;
           justify-content: center;
-          margin-bottom: 24px;
         }
         .cl-foot-links a {
           color: hsl(var(--foreground) / 0.6);
