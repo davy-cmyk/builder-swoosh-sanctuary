@@ -223,6 +223,32 @@ export function Navbar({ className }: NavbarProps) {
           transform: translateY(-1px);
           box-shadow: 0 4px 12px hsla(var(--automotive-gold) / 0.4);
         }
+        .cl-toggles {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-right: 16px;
+        }
+        .cl-toggle-btn {
+          background: hsl(var(--automotive-gold) / 0.1);
+          border: 1px solid hsl(var(--automotive-gold) / 0.3);
+          color: hsl(var(--automotive-gold));
+          padding: 6px 10px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 12px;
+          font-weight: 600;
+          transition: all 0.2s ease;
+        }
+        .cl-toggle-btn:hover {
+          background: hsl(var(--automotive-gold) / 0.2);
+          border-color: hsl(var(--automotive-gold) / 0.5);
+        }
+        .cl-theme-toggle {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
         .cl-burger { 
           display: none; 
           margin-left: 8px; 
