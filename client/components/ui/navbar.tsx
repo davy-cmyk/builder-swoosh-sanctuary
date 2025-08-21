@@ -13,19 +13,12 @@ export function Navbar({ className }: NavbarProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const navItems = [
-    { label: "Home", href: "#home" },
-    { 
-      label: "Reports", 
-      href: "#reports",
-      dropdown: [
-        { label: "Vehicle History", href: "#history" },
-        { label: "Market Analysis", href: "#market" },
-        { label: "Safety Reports", href: "#safety" }
-      ]
-    },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "About", href: "#about" }
+    { label: "Smart Buyer™", href: "/smart-buyer-report" },
+    { label: "Recall Check", href: "/recall-check" },
+    { label: "TradeMax™", href: "/trademax" },
+    { label: "Cars That Hold Value", href: "/value-hold" },
+    { label: "Cars to Avoid", href: "/cars-to-avoid" },
+    { label: "Top by Fuel Type", href: "/fuel-picks" }
   ];
 
   return (
