@@ -57,6 +57,14 @@ const App = () => (
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/404" element={<NotFound />} />
 
+          {/* Car Category Pages */}
+          <Route path="/cars-that-hold-value" element={<CarsHoldValue />} />
+          <Route path="/cars-to-avoid" element={<CarsToAvoid />} />
+          <Route path="/repair-risk" element={<RepairRisk />} />
+          <Route path="/ev-vs-gas" element={<EvVsGas />} />
+          <Route path="/local-deals" element={<LocalDeals />} />
+          <Route path="/popular-picks" element={<PopularPicks />} />
+
           {/* Redirects */}
           <Route path="/report" element={<Navigate to="/smart-buyer-report" replace />} />
           <Route path="/recalls" element={<Navigate to="/recall-check" replace />} />
