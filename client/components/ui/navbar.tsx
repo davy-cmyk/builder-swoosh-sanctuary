@@ -7,6 +7,8 @@ interface NavbarProps {
 
 export function Navbar({ className }: NavbarProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [language, setLanguage] = useState<'en' | 'es'>('en');
 
   useEffect(() => {
     // Mobile menu toggle script
