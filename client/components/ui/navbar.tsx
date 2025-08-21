@@ -126,15 +126,18 @@ export function Navbar({ className }: NavbarProps) {
         }
         .cl-dropdown-menu a {
           display: block;
-          padding: 10px 16px;
-          color: hsl(var(--foreground) / 0.8);
+          padding: 12px 20px;
+          color: #ffffff;
           text-decoration: none;
           font-weight: 500;
           transition: all 0.2s ease;
+          border-radius: 6px;
+          margin: 0 8px;
         }
         .cl-dropdown-menu a:hover {
-          background-color: hsl(var(--automotive-gold) / 0.1);
+          background-color: hsl(var(--automotive-gold) / 0.2);
           color: hsl(var(--automotive-gold));
+          transform: translateX(4px);
         }
         .cl-chevron {
           width: 16px;
