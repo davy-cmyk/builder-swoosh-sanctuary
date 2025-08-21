@@ -16,6 +16,11 @@ import Contact from "./pages/Contact";
 import Deals from "./pages/Deals";
 import FuelPicks from "./pages/FuelPicks";
 import SmartBuyerReport from "./pages/SmartBuyerReport";
+import SmartBuyerCheckout from "./pages/SmartBuyerCheckout";
+import SmartBuyerSuccess from "./pages/SmartBuyerSuccess";
+import RecallCheckResults from "./pages/RecallCheckResults";
+import TradeMaxResults from "./pages/TradeMaxResults";
+import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
