@@ -126,14 +126,14 @@ export function Navbar({ className }: NavbarProps) {
         .cl-dropdown-menu a {
           display: block;
           padding: 10px 16px;
-          color: #333;
+          color: hsl(var(--foreground) / 0.8);
           text-decoration: none;
           font-weight: 500;
-          transition: background-color 0.2s ease;
+          transition: all 0.2s ease;
         }
         .cl-dropdown-menu a:hover {
-          background-color: #f5f5f5;
-          color: var(--gold);
+          background-color: hsl(var(--automotive-gold) / 0.1);
+          color: hsl(var(--automotive-gold));
         }
         .cl-chevron {
           width: 16px;
