@@ -115,23 +115,15 @@ export function Navbar({ className }: NavbarProps) {
                   ))}
                 </nav>
 
-                {/* Mobile CTA Buttons */}
-                <div className="space-y-3 pt-6 border-t border-automotive-gold/20">
-                  <Button
-                    variant="outline"
-                    className="w-full justify-start text-gray-300 hover:text-automotive-gold border-automotive-gold/20 hover:border-automotive-gold/40 hover:bg-automotive-gold/10"
+                {/* Mobile CTA Button */}
+                <div className="pt-6 border-t border-automotive-gold/20">
+                  <a
+                    href="/quiz"
                     onClick={() => setIsOpen(false)}
+                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-automotive-gold to-automotive-gold-dark hover:from-automotive-gold-dark hover:to-automotive-gold text-automotive-black font-semibold rounded-lg transition-all duration-300"
                   >
-                    <Search className="w-4 h-4 mr-2" />
-                    Search VIN
-                  </Button>
-                  <Button
-                    className="w-full justify-start bg-gradient-to-r from-automotive-gold to-automotive-gold-dark hover:from-automotive-gold-dark hover:to-automotive-gold text-automotive-black font-semibold"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Shield className="w-4 h-4 mr-2" />
-                    Get Free Report
-                  </Button>
+                    Car Quiz
+                  </a>
                 </div>
               </div>
             </SheetContent>
