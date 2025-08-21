@@ -88,10 +88,9 @@ export function Navbar({ className }: NavbarProps) {
           color: var(--ink); 
           text-decoration: none; 
         }
-        .cl-links { 
-          display: flex; 
-          gap: 18px; 
-          margin-left: auto; 
+        .cl-links {
+          display: flex;
+          gap: 18px;
         }
         .cl-dropdown {
           position: relative;
