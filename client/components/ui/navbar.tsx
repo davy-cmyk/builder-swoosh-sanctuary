@@ -102,50 +102,18 @@ export function Navbar({ className }: NavbarProps) {
                 </div>
 
                 {/* Mobile Navigation */}
-                <div className="flex-1 py-6 space-y-2">
+                <nav className="flex-1 py-6 space-y-2" aria-label="Primary">
                   {navItems.map((item) => (
-                    <div key={item.label}>
-                      {item.dropdown ? (
-                        <div>
-                          <button
-                            onClick={() => setActiveDropdown(
-                              activeDropdown === item.label ? null : item.label
-                            )}
-                            className="flex items-center justify-between w-full px-4 py-3 text-gray-300 hover:text-automotive-gold hover:bg-automotive-gold/10 rounded-lg transition-all duration-200"
-                          >
-                            {item.label}
-                            <ChevronDown className={cn(
-                              "w-4 h-4 transition-transform duration-200",
-                              activeDropdown === item.label && "rotate-180"
-                            )} />
-                          </button>
-                          {activeDropdown === item.label && (
-                            <div className="ml-4 mt-2 space-y-1">
-                              {item.dropdown.map((dropdownItem) => (
-                                <a
-                                  key={dropdownItem.label}
-                                  href={dropdownItem.href}
-                                  onClick={() => setIsOpen(false)}
-                                  className="block px-4 py-2 text-sm text-gray-400 hover:text-automotive-gold hover:bg-automotive-gold/5 rounded-lg transition-all duration-200"
-                                >
-                                  {dropdownItem.label}
-                                </a>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <a
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className="block px-4 py-3 text-gray-300 hover:text-automotive-gold hover:bg-automotive-gold/10 rounded-lg transition-all duration-200"
-                        >
-                          {item.label}
-                        </a>
-                      )}
-                    </div>
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block px-4 py-3 text-gray-300 hover:text-automotive-gold hover:bg-automotive-gold/10 rounded-lg transition-all duration-200"
+                    >
+                      {item.label}
+                    </a>
                   ))}
-                </div>
+                </nav>
 
                 {/* Mobile CTA Buttons */}
                 <div className="space-y-3 pt-6 border-t border-automotive-gold/20">
