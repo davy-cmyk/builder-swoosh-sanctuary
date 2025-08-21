@@ -205,10 +205,6 @@ export function Navbar({ className }: NavbarProps) {
 
       <header className={cn("cl-nav", className)}>
         <div className="cl-nav-inner">
-          <a className="cl-logo" href="/">
-            Car Leopard
-          </a>
-
           <nav className="cl-links" aria-label="Primary">
             {dropdownItems.map((dropdown) => (
               <div key={dropdown.label} className="cl-dropdown">
