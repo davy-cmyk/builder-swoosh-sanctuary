@@ -187,7 +187,7 @@ export default function Index() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 md:py-24 bg-automotive-black">
+      <section id="how-it-works" className="py-16 md:py-24 bg-automotive-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -259,7 +259,7 @@ export default function Index() {
       </section>
 
       {/* Car Story Features Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-automotive-black-light via-automotive-black to-automotive-black-dark">
+      <section id="reports" className="py-20 md:py-32 bg-gradient-to-b from-automotive-black-light via-automotive-black to-automotive-black-dark">
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-20">
@@ -448,7 +448,7 @@ export default function Index() {
 
 
       {/* Footer CTA */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-automotive-black-dark to-automotive-black">
+      <section id="about" className="py-16 md:py-24 bg-gradient-to-br from-automotive-black-dark to-automotive-black">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
