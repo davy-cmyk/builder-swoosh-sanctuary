@@ -15,6 +15,74 @@ export default function Index() {
     console.log("Email submitted:", emailValue);
   };
 
+  useEffect(() => {
+    // Quiz form submission logic
+    const quizForm = document.getElementById('quizForm');
+    if (quizForm) {
+      const handleQuizSubmit = (e: Event) => {
+        e.preventDefault();
+        const fd = new FormData(e.target as HTMLFormElement);
+        const answers = Object.fromEntries(fd.entries());
+        (answers as any).feat = fd.getAll('feat');
+
+        // Simple routing logic
+        let recs: Array<{label: string, url: string}> = [];
+
+        // Safety-first, long horizon → Smart Buyer™ + Cars That Hold Value
+        if (answers.goal === 'avoidlemons' || answers.horizon === '6plus') {
+          recs.push({label:'Run a Smart Buyer™ Report', url:'/smart-buyer-report'});
+          recs.push({label:'See Cars That Hold Value', url:'/value-hold'});
+        }
+
+        // Deal hunters
+        if (answers.goal === 'bestdeal' || answers.miles === 'high' || answers.miles === 'any') {
+          recs.push({label:'Find Local Deals', url:'/deals'});
+          recs.push({label:'Use TradeMax™ (trade-in options)', url:'/trademax'});
+        }
+
+        // EV/Hybrid curious
+        if (answers.fuel === 'ev' || answers.fuel === 'hybrid' || answers.goal === 'evcurious') {
+          recs.push({label:'Top Picks by Fuel Type', url:'/fuel-picks'});
+        }
+
+        // Always suggest Recall Check
+        recs.push({label:'Free Recall Check', url:'/recall-check'});
+
+        // Deduplicate
+        const seen = new Set();
+        recs = recs.filter(r => !seen.has(r.url) && seen.add(r.url));
+
+        const box = document.getElementById('quizResult');
+        if (box) {
+          box.classList.remove('hidden');
+          box.innerHTML = `
+            <h3>Your best next steps</h3>
+            <p>Based on your inputs, start here:</p>
+            <div>${recs.map(r=>`<a href="${r.url}">${r.label}</a>`).join('')}</div>
+          `;
+        }
+
+        // Optional: capture lead
+        try {
+          fetch('/api/lead', {
+            method:'POST',
+            headers:{'Content-Type':'application/json'},
+            body: JSON.stringify({ email:'', source:'quiz', answers })
+          });
+        } catch(e) {
+          console.log('Lead capture failed:', e);
+        }
+      };
+
+      quizForm.addEventListener('submit', handleQuizSubmit);
+
+      // Cleanup
+      return () => {
+        quizForm.removeEventListener('submit', handleQuizSubmit);
+      };
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-automotive-black text-white">
       <Navbar />
@@ -498,7 +566,7 @@ export default function Index() {
                 <select name="miles" required>
                   <option value="">Select</option>
                   <option value="low">Under 40k</option>
-                  <option value="mid">40k–80k</option>
+                  <option value="mid">40k���80k</option>
                   <option value="high">80k–120k</option>
                   <option value="any">Any</option>
                 </select>
