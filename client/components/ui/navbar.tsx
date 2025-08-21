@@ -474,8 +474,8 @@ export function Navbar({ className }: NavbarProps) {
           </div>
 
           <div className="cl-cta">
-            <a className="cl-btn" href="/smart-buyer-report">
-              {language === 'en' ? 'Get Your Report' : 'Obtén tu Reporte'}
+            <a className="cl-btn" href={menuData.cta.url}>
+              {menuData.cta.label}
             </a>
           </div>
 
