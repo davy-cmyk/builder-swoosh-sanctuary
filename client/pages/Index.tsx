@@ -63,7 +63,7 @@ export default function Index() {
             <div className="text-center max-w-4xl mx-auto">
               {/* Main Headline */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
-                Expose the Truth{" "}
+                <span className="text-automotive-gold">Car Leopard</span> Exposes the Truth{" "}
                 <span className="text-automotive-gold">Before You Buy.</span>
               </h1>
 
