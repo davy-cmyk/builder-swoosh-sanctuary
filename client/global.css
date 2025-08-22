@@ -9,6 +9,10 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
+    --gold: #c9a227;
+    --ink: #111;
+    --stone: #f7f7f7;
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -114,6 +118,41 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 43 89% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 45 100% 96%;
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    /* Light mode automotive colors */
+    --automotive-black: 0 0% 95%;
+    --automotive-black-light: 0 0% 98%;
+    --automotive-black-dark: 0 0% 90%;
+  }
 }
 
 @layer base {
@@ -124,4 +163,52 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Quiz Section Styling */
+#cl-quiz {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 20px;
+  max-width: 820px;
+  margin: 20px auto;
+}
+#cl-quiz .q {
+  margin-bottom: 14px;
+}
+#cl-quiz label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+#cl-quiz select {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+}
+#cl-quiz .opts {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+#quizResult.hidden {
+  display: none;
+}
+#quizResult {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  background: #f7f7f7;
+}
+#quizResult a {
+  display: inline-block;
+  margin: 6px 8px 0 0;
+  padding: 10px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  background: var(--gold);
+  color: #000;
+  font-weight: 700;
 }
