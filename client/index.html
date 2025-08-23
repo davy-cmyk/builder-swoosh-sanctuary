@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Car Leopard — Shop Smarter</title>
+  <style>
+    :root{--bg:#0f0f10;--panel:#151517;--text:#e9e9ec;--muted:#a9a9b2;--brand:#d4af37;--border:#242428;--radius:16px;--shadow:0 10px 30px rgba(0,0,0,.35)}
+    *{box-sizing:border-box} html,body{height:100%} body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,Segoe UI,Roboto,Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(15,15,16,.75);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand-logo{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#1e1e22,#0b0b0c);border:1px solid var(--border);display:grid;place-items:center;font-weight:700;color:var(--brand)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{padding:6px 10px;border-radius:10px;border:1px solid transparent}
+    .nav-links a:hover{border-color:var(--border);background:#151517}
+    .hero{padding:64px 0 24px}
+    .hero-grid{display:grid;gap:24px;grid-template-columns:1.1fr .9fr}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .pad{padding:24px}
+    h1{font-size:40px;line-height:1.1;margin:0 0 10px} h2{margin:0 0 6px}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block;font-size:12px;color:#111;background:var(--brand);padding:6px 10px;border-radius:999px;margin-bottom:14px;font-weight:600}
+    .hero-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:#0b0b0c}
+    .hero-img img{display:block;width:100%;height:auto}
+    .search{display:grid;gap:10px;grid-template-columns:120px 1fr 1fr 120px 130px;margin-top:14px}
+    input,select,button{height:44px;border-radius:12px;border:1px solid var(--border);background:#0e0e10;color:var(--text);padding:0 12px}
+    button{background:var(--brand);color:#141414;border:0;font-weight:700;cursor:pointer}
+    button:disabled{opacity:.6;cursor:not-allowed}
+    .tools{display:grid;gap:12px;grid-template-columns:repeat(4,1fr);margin-top:18px}
+    .tool{display:flex;gap:10px;align-items:center;padding:14px;border:1px solid var(--border);border-radius:12px;background:#101013}
+    .tool span{font-weight:600}
+    .section{margin-top:24px}
+    .cards{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+    .footer{padding:40px 0;color:var(--muted);border-top:1px solid var(--border);margin-top:40px}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.search{grid-template-columns:1fr 1fr;grid-auto-rows:auto}.tools{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}}
+    @media (max-width:520px){h1{font-size:30px}.tools{grid-template-columns:1fr}}
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-logo">CL</div>
+        <strong>Car Leopard</strong>
+      </div>
+      <div class="nav-links">
+        <a href="#hero">Shop Smart</a>
+        <a href="#smart-buyer">Buy Smarter</a>
+        <a href="#tools">Tools</a>
+        <a href="#learn">Learn</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <main id="hero" class="container hero">
+    <div class="hero-grid">
+      <div class="card pad">
+        <div class="badge">Search Smart. Shop Bold.</div>
+        <h1>Your guide to buying a used car without the nonsense</h1>
+        <p class="muted">Run a quick search, then unlock the Smart Buyer™ Report for market price, repair risk, and dealer transparency.</p>
+
+        <!-- SEARCH FORM -->
+        <form id="search" class="search" onsubmit="return handleSearch(event)">
+          <select id="cond">
+            <option value="used">Used</option>
+            <option value="new">New</option>
+          </select>
+          <input id="make" placeholder="Make (e.g. Toyota)" autocomplete="off"/>
+          <input id="model" placeholder="Model (e.g. Camry)" autocomplete="off"/>
+          <input id="zip" placeholder="ZIP" maxlength="5" inputmode="numeric" autocomplete="postal-code"/>
+          <button id="go" type="submit">Search</button>
+        </form>
+
+        <!-- QUICK TOOLS -->
+        <div id="tools" class="tools">
+          <a class="tool" href="#smart-buyer"><span>Smart Buyer™</span></a>
+          <a class="tool" href="#recallguard"><span>RecallGuard™</span></a>
+          <a class="tool" href="#trademax"><span>TradeMax™</span></a>
+          <a class="tool" href="#value"><span>📈 Cars That Hold Value</span></a>
+        </div>
+      </div>
+
+      <div class="card hero-img">
+        <img src="https://i.ibb.co/zT3mvx7v/Chat-GPT-Image-Aug-4-2025-01-06-23-PM.png" alt="Car Leopard hero"/>
+      </div>
+    </div>
+
+    <!-- SECTIONS (inline in same file) -->
+    <section id="smart-buyer" class="section card pad">
+      <h2>Smart Buyer™ Report</h2>
+      <p class="muted">Market value accuracy, repair risk forecast, and value retention. Premium-only integrations for VinAudit and MarketCheck stay locked until checkout.</p>
+      <p><a href="#hero" class="tool" style="display:inline-flex;padding:10px;border-radius:10px">Run a sample</a></p>
+    </section>
+
+    <section id="recallguard" class="section card pad">
+      <h2>RecallGuard™</h2>
+      <p class="muted">Free NHTSA recall lookup for any VIN. Because surprises are for birthdays, not brake lines.</p>
+      <p><a href="#hero" class="tool" style="display:inline-flex;padding:10px;border-radius:10px">Check a VIN</a></p>
+    </section>
+
+    <section id="trademax" class="section card pad">
+      <h2>TradeMax™</h2>
+      <p class="muted">Compare trade-in offers from CarMax, Carvana, and local dealers. Keep the best, ghost the rest.</p>
+      <p><a href="#hero" class="tool" style="display:inline-flex;padding:10px;border-radius:10px">Start comparison</a></p>
+    </section>
+
+    <section id="value" class="section card pad">
+      <h2>Value Insights</h2>
+      <div class="cards">
+        <article class="card pad">
+          <h3>🚫 Cars to Avoid</h3>
+          <p class="muted">Known problem children. We flag the usual suspects so you don’t “learn the hard way.”</p>
+        </article>
+        <article class="card pad">
+          <h3>📈 Cars That Hold Value</h3>
+          <p class="muted">Resale winners by segment. Spend once, keep more later.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="learn" class="footer">
+    <div class="container">
+      <div>© <span id="y"></span> Car Leopard • <a href="#privacy">Privacy</a> • <a href="#terms">Terms</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    async function handleSearch(e){
+      e.preventDefault();
+      const cond = document.getElementById('cond').value.trim();
+      const make = document.getElementById('make').value.trim();
+      const model= document.getElementById('model').value.trim();
+      const zip  = document.getElementById('zip').value.trim();
+      if(!make || !model || !/^[0-9]{5}$/.test(zip)){
+        alert('Enter Make, Model, and a 5‑digit ZIP. Minimal effort.');
+        return false;
+      }
+      // hit your simple API if present, otherwise just navigate to a hash
+      try{
+        const qs = new URLSearchParams({cond, make, model, zip}).toString();
+        const r = await fetch('/api/search?'+qs,{cache:'no-store'});
+        const j = await r.json();
+        alert((j && j.ok) ? 'API OK: '+JSON.stringify(j.query) : 'Search sent: '+qs);
+      }catch(_){
+        location.hash = '#/search?' + new URLSearchParams({cond, make, model, zip}).toString();
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
